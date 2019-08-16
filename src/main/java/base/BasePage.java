@@ -1,5 +1,6 @@
 package base;
 
+import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
@@ -15,53 +16,32 @@ import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-//import java.time.Duration;
-import java.util.HashMap;
 import utils.GlobalParameters;
 
-public class BasePage {
-//    private static ExtentTest log;
-//    private static WebDriverWait wait;
-//
-//    public BasePage() {
-//        this.log = BaseTests.log;
-//        wait =  new WebDriverWait(getDriver(), 5);
-//        PageFactory.initElements(getDriver(), this);
-//    }
-//
-//    public void escrever(WebElement element, String texto) {
-//        AguardarLoading();
-//        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-//        try {
-//            log.info("Ação: '" + metodoChamada + "' com o valor: '"+texto+"'");
-//            wait.until(ExpectedConditions.elementToBeClickable(element)).clear();
-//            element.sendKeys(Keys.CONTROL + "a");
-//            element.sendKeys(Keys.DELETE);
-//            element.sendKeys(texto);
-//        }
-//        catch (Exception e){
-//            log.error("Não conseguiu executar a ação: '"+ metodoChamada+"'");
-//            try {
-//                // log.fail("", MediaEntityBuilder.createScreenCaptureFromPath(ScreenShot.captureScreen()).build());
-//                log.error(e.toString());
-//            } catch (Exception e1) {
-//                e1.printStackTrace();
-//            }
-//        }
-//    }
+import java.time.Duration;
+import java.util.HashMap;
 
+import static base.DriverFactory.getDriver;
+
+
+public class BasePage {
+    private static ExtentTest log;
+    private static WebDriverWait wait;
 
     //Variaveis globlais
     protected AppiumDriver driver = null;
-    protected WebDriverWait wait = null;
+    //protected WebDriverWait wait = null;
     protected JavascriptExecutor javaScriptExecutor = null;
 
-    //Construtor
-    public BasePage(){
-        PageFactory.initElements(new AppiumFieldDecorator(DriverFactory.getDriver()),this);
-        driver = DriverFactory.getDriver();
+
+    public BasePage() {
+        this.log = BaseTests.log;
+        PageFactory.initElements(new AppiumFieldDecorator(getDriver()),this);
+        driver = getDriver();
         wait = new WebDriverWait (driver, GlobalParameters.TIMEOUT_DEFAULT);
     }
+
+//======================
 
     protected void waitForElement(MobileElement element){
         wait.until(ExpectedConditions.visibilityOf(element));
@@ -87,7 +67,11 @@ public class BasePage {
             {
                 waitForElement(element);
                 element.click();
-                ExtentReportUtils.addTestInfo(3, "");
+                //ExtentReportUtils.addTestInfo(3, "");
+                log.info("Clicou no elemento: "+element);
+                log.info("Clicou no elemento: "+element.getTagName());
+                log.info("Clicou no elemento: "+element.getText());
+                log.info("Clicou no elemento: "+element.getAttribute("name"));
                 timeOut.stop();
                 return;
             }
@@ -112,55 +96,66 @@ public class BasePage {
     protected void sendKeys(MobileElement element, String text){
         waitForElement(element);
         element.sendKeys(text);
-        ExtentReportUtils.addTestInfo(3, "PARAMETER: " + text);
+        // ExtentReportUtils.addTestInfo(3, "PARAMETER: " + text);
+        log.info("Escrever o texto "+text+" no elemento: "+element);
     }
     protected void sendKeysWithoutWaitVisible(MobileElement element, String text){
         element.sendKeys(text);
-        ExtentReportUtils.addTestInfo(3, "PARAMETER: " + text);
+        //ExtentReportUtils.addTestInfo(3, "PARAMETER: " + text);
+        log.info("Escrever o texto "+text+" no elemento: "+element);
     }
     protected void clear(MobileElement element){
+        log.info("Limpar o texto do elemento: "+element);
         waitForElement(element);
         element.clear();
     }
     protected void clearAndSendKeys(MobileElement element, String text){
+        log.info("Limpar o texto do elemento "+element+" e escrever novo texto: "+text);
         waitForElement(element);
         element.clear();
         element.sendKeys(text);
     }
     protected void clearAndSendKeysAlternative(MobileElement element, String text){
+        log.info("Limpar o texto do elemento "+element+" e escrever novo texto: "+text);
         waitForElement(element);
         element.sendKeys(Keys.CONTROL + "a");
         element.sendKeys(Keys.DELETE);
         element.sendKeys(text);
     }
     protected String getText(MobileElement element){
+        log.info("Obter texto do elemento: "+element);
         waitForElement(element);
         String text = element.getText();
-        ExtentReportUtils.addTestInfo(3, "RETURN: " + text);
+        //ExtentReportUtils.addTestInfo(3, "RETURN: " + text);
+        log.info("Texto do elemento "+element+" = "+text);
         return text;
     }
     protected String getValue(MobileElement element){
         waitForElement(element);
         String text = element.getAttribute("value");
-        ExtentReportUtils.addTestInfo(3, "RETURN: " + text);
+        //ExtentReportUtils.addTestInfo(3, "RETURN: " + text);
+        log.info("Texto do elemento "+element+" = "+text);
         return text;
     }
     protected boolean returnIfElementIsDisplayed(MobileElement element){
         waitForElement(element);
         boolean result = element.isDisplayed();
-        ExtentReportUtils.addTestInfo(3, "RETURN: " + result);
+        //ExtentReportUtils.addTestInfo(3, "RETURN: " + result);
+        log.info("Elemento "+element+" está visivel = "+result);
         return result;
     }
     protected boolean returnIfElementIsEnabled(MobileElement element){
         waitForElement(element);
         boolean result = element.isEnabled();
-        ExtentReportUtils.addTestInfo(3, "RETURN: " + result);
+        //ExtentReportUtils.addTestInfo(3, "RETURN: " + result);
+        log.info("Elemento "+element+" está habilitado = "+result);
         return result;
     }
     protected boolean returnIfElementIsSelected(MobileElement element){
         waitForElement(element);
         boolean result = element.isSelected();
-        ExtentReportUtils.addTestInfo(3, "RETURN: " + result);
+        //ExtentReportUtils.addTestInfo(3, "RETURN: " + result);
+        log.info("Elemento "+element+" está selecionado = "+result);
         return result;
     }
     protected void scrollUsingTouchActions_ByElements(MobileElement startElement, MobileElement endElement, int seconds) {
@@ -200,3 +195,28 @@ public class BasePage {
         action.perform();
     }
 }
+
+//    public void escrever(WebElement element, String texto) {
+//        AguardarLoading();
+//        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+//        try {
+//            log.info("Ação: '" + metodoChamada + "' com o valor: '"+texto+"'");
+//            wait.until(ExpectedConditions.elementToBeClickable(element)).clear();
+//            element.sendKeys(Keys.CONTROL + "a");
+//            element.sendKeys(Keys.DELETE);
+//            element.sendKeys(texto);
+//        }
+//        catch (Exception e){
+//            log.error("Não conseguiu executar a ação: '"+ metodoChamada+"'");
+//            try {
+//                // log.fail("", MediaEntityBuilder.createScreenCaptureFromPath(ScreenShot.captureScreen()).build());
+//                log.error(e.toString());
+//            } catch (Exception e1) {
+//                e1.printStackTrace();
+//            }
+//        }
+//    }
+
+
+
+

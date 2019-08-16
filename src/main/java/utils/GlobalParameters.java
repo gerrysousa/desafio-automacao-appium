@@ -45,7 +45,7 @@ public class GlobalParameters {
         properties = new Properties();
         InputStream input = null;
         try {
-            input = new FileInputStream("globalParameters.properties");
+            input = new FileInputStream(PathProject+"\\src\\main\\java\\utils\\globalParameters.properties");
             properties.load(input);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -77,7 +77,7 @@ public class GlobalParameters {
         AndroidPlatformVersion= properties.getProperty("AndroidPlatformVersion");
         AndroidAppPackage= properties.getProperty("AndroidAppPackage");
         AndroidAppActivity= properties.getProperty("AndroidAppActivity");
-        AndroidAppPath = System.getProperty("user.dir")+"\\src\\test\\java\\com\\templateJavaAppium\\resources\\app\\android\\"+properties.getProperty("AndroidApp");
+        AndroidAppPath = PathProject+"\\src\\main\\resources\\app\\android\\"+properties.getProperty("AndroidApp");
         AndroidBrowserName=properties.getProperty("AndroidBrowserName");
         AndroidNoReset=properties.getProperty("AndroidNoReset");
         AndroidFullReset=properties.getProperty("AndroidFullReset");
