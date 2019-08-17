@@ -6,17 +6,19 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class MenuPage extends BasePage {
 
-    @AndroidFindBy(xpath = "(//android.widget.TextView[@content-desc=\"Row Category Name\"])[8]")
-    private MobileElement loginPageBtn;
-    @AndroidFindBy(xpath = "(//android.widget.TextView[@content-desc=\"Row Category Name\"])[4]")
-    private MobileElement inputControlsBtn;
+    //android.widget.Button[@text='7']
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Login Page']")
+    private MobileElement btnLoginPage;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Input Controls']")
+    private MobileElement btnInputControls;
 
     public void clickLoginPage()
     {
-        click(loginPageBtn);
+        click(btnLoginPage);
     }
     public void clickInputControls()
     {
-        click(inputControlsBtn);
+        click(btnInputControls);
     }
 }

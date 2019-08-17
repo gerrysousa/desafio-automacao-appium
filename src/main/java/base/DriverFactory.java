@@ -5,6 +5,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Parameters;
 import utils.GlobalParameters;
 
 import java.net.URL;
@@ -17,17 +18,19 @@ public class DriverFactory {
     //private static String path = System.getProperty("user.dir");
 
 
-    public DriverFactory(String deviceType) {
+    public DriverFactory(String deviceType, String environment) {
         this.deviceType = deviceType;
+        this.environment = environment;
     }
 
+    @Parameters({"deviceType"})
     public static AppiumDriver<MobileElement> getDriver() {
         if (driver == null) {
             if (environment.equals("local")){
-                DriverFactory.createDriver();
+                DriverFactory.createDriver(deviceType);
             }
             else {
-                DriverFactory.createDriverDeviceFarm();
+                DriverFactory.createDriverDeviceFarm(deviceType);
             }
 
         }
@@ -39,9 +42,9 @@ public class DriverFactory {
         DriverFactory.driver = driver;
     }
 
-    public static AppiumDriver<MobileElement> createDriver(){
-        try {
-            if (deviceType == "Android") {
+    public static AppiumDriver<MobileElement> createDriver(String deviceType){
+        try {//environment.equals("deviceFarm")
+            if (deviceType.equals("Android")) {
                 DesiredCapabilities caps = new DesiredCapabilities();
                 caps.setCapability("platformName", GlobalParameters.AndroidPlatformName);
                 caps.setCapability("platformVersion", GlobalParameters.AndroidPlatformVersion);
@@ -52,8 +55,11 @@ public class DriverFactory {
                 caps.setCapability("noReset", GlobalParameters.AndroidNoReset);
                 caps.setCapability("fullReset", GlobalParameters.AndroidFullReset);
                 caps.setCapability("orientation", GlobalParameters.AndroidOrientation);
+                caps.setCapability("automationName", GlobalParameters.AppiumAutomationName);
                 driver = new AndroidDriver(new URL(GlobalParameters.AppiumServer), caps);
-            } else if (deviceType == "IOS") {
+            }
+            else if (deviceType == "IOS")
+            {
             }
             //return driver;
         }
@@ -63,7 +69,7 @@ public class DriverFactory {
         }
         return driver;
     }
-    public static AppiumDriver<MobileElement> createDriverDeviceFarm(){
+    public static AppiumDriver<MobileElement> createDriverDeviceFarm(String deviceType){
         try {
             if (deviceType == "Android") {
                 DesiredCapabilities caps = new DesiredCapabilities();
@@ -76,6 +82,7 @@ public class DriverFactory {
                 caps.setCapability("noReset", GlobalParameters.AndroidNoReset);
                 caps.setCapability("fullReset", GlobalParameters.AndroidFullReset);
                 caps.setCapability("orientation", GlobalParameters.AndroidOrientation);
+                caps.setCapability("automationName", GlobalParameters.AppiumAutomationName);
                 driver = new AndroidDriver(new URL(GlobalParameters.AppiumServer), caps);
             } else if (deviceType == "IOS") {
             }

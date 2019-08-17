@@ -60,11 +60,11 @@ public class BaseTests {
     @Parameters({ "OS", "environment" })
     public void beforeMethod(@Optional("Android") String deviceType, @Optional("local") String environment, Method method, ITestContext context) {
         // Create Driver
-        DriverFactory factory = new DriverFactory(deviceType);
+        DriverFactory factory = new DriverFactory(deviceType, environment);
         if (environment.equals("deviceFarm")) {
-            driver = factory.createDriverDeviceFarm();
+            driver = factory.createDriverDeviceFarm(deviceType);
         } else {
-            driver = factory.createDriver();
+            driver = factory.createDriver(deviceType);
         }
         // Set up test name and Logger
         setCurrentThreadName();

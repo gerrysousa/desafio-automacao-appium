@@ -22,6 +22,7 @@ public class GlobalParameters {
     public static String DB_USER;
     public static String DB_PASSWORD;
 
+    public static String AppiumAutomationName;
     public static String AppiumIPAddress;
     public static int AppiumPort;
 
@@ -70,6 +71,7 @@ public class GlobalParameters {
         AppiumServer = properties.getProperty("AppiumServer");
         AppiumIPAddress = properties.getProperty("AppiumIPAddress");
         AppiumPort = Integer.parseInt(properties.getProperty("AppiumPort"));
+        AppiumAutomationName=  properties.getProperty("AppiumAutomationName");
 
         AndroidDeviceName  = properties.getProperty("AndroidDeviceName");
         AndroidUDID= properties.getProperty("AndroidUDID");
