@@ -18,6 +18,10 @@ public class __ExemploPage extends BasePage {
     @AndroidFindBy(accessibility = "Login Button")
     private MobileElement loginBtn;
 
+    @iOSFindBy(xpath = "//android.widget.TextView[@text='Login Page']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Login Page']")
+    private MobileElement btnLoginPage;
+
     @iOSFindBy(accessibility = "Alt Message")
     @AndroidFindBy(accessibility = "Alt Message")
     private MobileElement message;

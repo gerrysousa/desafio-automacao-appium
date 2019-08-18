@@ -8,7 +8,7 @@ public class LoginSteps {
     public void IrParaLoginPage()
     {
         new HomePage().clicarBtnMenu();
-        new MenuPage().clickBtnLoginPage();
+        new MenuPage().clicarBtnLoginPage();
     }
     public String fazerLogin(String username, String password)
     {
