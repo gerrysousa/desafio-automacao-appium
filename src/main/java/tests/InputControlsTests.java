@@ -50,4 +50,20 @@ public class InputControlsTests extends BaseTests {
         String toggleFinal = new InputControlsToggleButtonPage().obterStatusSwitch();
         Assert.assertEquals(toggleFinal, "ON");
     }
+
+    @Test(priority = 1, description = "Teste para manipular campo Spinner")
+    public void Test_ManipularCampoSpinner() {
+        new InputControlsSteps().AcessarInputControlsSpinner();
+        String opcaoInicialSelecionada = new InputControlsSpinnerPage().obterOpcaoSelecionada();
+        Assert.assertEquals(opcaoInicialSelecionada, "Selected: option 1");
+
+        new InputControlsSpinnerPage().selecionarOpcaoGenerica("option 3");
+        String opcaoFinalSelecionada = new InputControlsSpinnerPage().obterOpcaoSelecionada();
+        Assert.assertEquals(opcaoFinalSelecionada, "Selected: option 3");
+    }
+
+
+
+
+
 }

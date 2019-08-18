@@ -8,10 +8,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.apache.commons.lang3.time.StopWatch;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -92,6 +89,14 @@ public class BasePage {
             e.printStackTrace();
         }
     }
+    public void clicarAlternativo(By by) {
+        getDriver().findElement(by).click();
+    }
+
+    protected void clicarPorTexto(String texto) {
+        clicarAlternativo(By.xpath("//*[@text='"+texto+"']"));
+    }
+
     protected void escrever(MobileElement element, String text){
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
         log.info("Ação: '" + metodoChamada+"'");
