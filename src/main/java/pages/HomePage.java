@@ -6,6 +6,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class HomePage extends BasePage {
     //@AndroidFindBy(accessibility = "ReferenceApp")
+    //@iOSFindBy(accessibility= "ReferenceApp")
     @AndroidFindBy(xpath = "//android.widget.ImageButton")
     private MobileElement btnMenu;
 
