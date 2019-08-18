@@ -11,6 +11,6 @@ public class HomePage extends BasePage {
 
     public void clickMenu()
     {
-        click(btnMenu);
+        clicar(btnMenu);
     }
 }

@@ -10,27 +10,30 @@ public class LoginPage extends BasePage
     @iOSFindBy(accessibility= "Username Input Field")
     @AndroidFindBy(accessibility= "Username Input Field")
     private MobileElement usernameField;
+
     @iOSFindBy(accessibility = "Password Input Field")
     @AndroidFindBy(accessibility = "Password Input Field")
     private MobileElement passwordField;
+
     @iOSFindBy(accessibility = "Login Button")
     @AndroidFindBy(accessibility = "Login Button")
     private MobileElement loginBtn;
+
     @iOSFindBy(accessibility = "Alt Message")
     @AndroidFindBy(accessibility = "Alt Message")
     private MobileElement message;
 
-    public void usernameFill(String username)
+    public void preencherNome(String username)
     {
-        sendKeys(usernameField,username);
+        escrever(usernameField,username);
     }
-    public void passwordFill(String password)
+    public void preencherSenha(String password)
     {
-        sendKeys(passwordField,password);
+        escrever(passwordField,password);
     }
     public void clickLoginBtn()
     {
-        click(loginBtn);
+        clicar(loginBtn);
     }
     public String getMessageText()
     {

@@ -13,12 +13,12 @@ public class MenuPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Input Controls']")
     private MobileElement btnInputControls;
 
-    public void clickLoginPage()
+    public void clickBtnLoginPage()
     {
-        click(btnLoginPage);
+        clicar(btnLoginPage);
     }
     public void clickInputControls()
     {
-        click(btnInputControls);
+        clicar(btnInputControls);
     }
 }

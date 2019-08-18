@@ -43,20 +43,22 @@ public class BasePage {
 
 //======================
 
-    protected void waitForElement(MobileElement element){
+    protected void esperarElemento(MobileElement element){
         wait.until(ExpectedConditions.visibilityOf(element));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    protected void waitForElementToBeClickeable(MobileElement element){
+    protected void esperarElementoSerClicavel(MobileElement element){
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    protected void waitForElementByTime(MobileElement element, int time){
+    protected void esperarElementoPorTempo(MobileElement element, int time){
         WebDriverWait waitTime = new WebDriverWait(driver, time);
         waitTime.until(ExpectedConditions.visibilityOf(element));
     }
-    protected void click(MobileElement element){
+    protected void clicar(MobileElement element){
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada+"'");
         WebDriverException possibleWebDriverException = null;
         StopWatch timeOut = new StopWatch();
         timeOut.start();
@@ -65,13 +67,10 @@ public class BasePage {
             //WebElement element = null;
             try
             {
-                waitForElement(element);
+                esperarElemento(element);
                 element.click();
                 //ExtentReportUtils.addTestInfo(3, "");
                 log.info("Clicou no elemento: "+element);
-                log.info("Clicou no elemento: "+element.getTagName());
-                log.info("Clicou no elemento: "+element.getText());
-                log.info("Clicou no elemento: "+element.getAttribute("name"));
                 timeOut.stop();
                 return;
             }
@@ -93,103 +92,135 @@ public class BasePage {
             e.printStackTrace();
         }
     }
-    protected void sendKeys(MobileElement element, String text){
-        waitForElement(element);
+    protected void escrever(MobileElement element, String text){
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada+"'");
+        esperarElemento(element);
         element.sendKeys(text);
         // ExtentReportUtils.addTestInfo(3, "PARAMETER: " + text);
-        log.info("Escrever o texto "+text+" no elemento: "+element);
+        log.info("Escrever o texto '"+text+"' no elemento: "+element);
     }
-    protected void sendKeysWithoutWaitVisible(MobileElement element, String text){
+    protected void escreverSemEsperarSerVisivel(MobileElement element, String text){
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada);
         element.sendKeys(text);
         //ExtentReportUtils.addTestInfo(3, "PARAMETER: " + text);
         log.info("Escrever o texto "+text+" no elemento: "+element);
     }
-    protected void clear(MobileElement element){
+    protected void limparElemento(MobileElement element){
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada);
         log.info("Limpar o texto do elemento: "+element);
-        waitForElement(element);
+        esperarElemento(element);
         element.clear();
     }
-    protected void clearAndSendKeys(MobileElement element, String text){
+    protected void limparDepoisEscrever(MobileElement element, String text){
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada);
         log.info("Limpar o texto do elemento "+element+" e escrever novo texto: "+text);
-        waitForElement(element);
+        esperarElemento(element);
         element.clear();
         element.sendKeys(text);
     }
-    protected void clearAndSendKeysAlternative(MobileElement element, String text){
+    protected void limparDepoisEscreverAlternativo(MobileElement element, String text){
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada);
         log.info("Limpar o texto do elemento "+element+" e escrever novo texto: "+text);
-        waitForElement(element);
+        esperarElemento(element);
         element.sendKeys(Keys.CONTROL + "a");
         element.sendKeys(Keys.DELETE);
         element.sendKeys(text);
     }
-    protected String getText(MobileElement element){
+    protected String obterTexto(MobileElement element){
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada);
         log.info("Obter texto do elemento: "+element);
-        waitForElement(element);
+        esperarElemento(element);
         String text = element.getText();
         //ExtentReportUtils.addTestInfo(3, "RETURN: " + text);
         log.info("Texto do elemento "+element+" = "+text);
         return text;
     }
-    protected String getValue(MobileElement element){
-        waitForElement(element);
+    protected String obterValor(MobileElement element){
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada);
+        esperarElemento(element);
         String text = element.getAttribute("value");
         //ExtentReportUtils.addTestInfo(3, "RETURN: " + text);
         log.info("Texto do elemento "+element+" = "+text);
         return text;
     }
-    protected boolean returnIfElementIsDisplayed(MobileElement element){
-        waitForElement(element);
+    protected boolean retornaSeElementoEstaExibido(MobileElement element){
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada);
+        esperarElemento(element);
         boolean result = element.isDisplayed();
         //ExtentReportUtils.addTestInfo(3, "RETURN: " + result);
         log.info("Elemento "+element+" está visivel = "+result);
         return result;
     }
-    protected boolean returnIfElementIsEnabled(MobileElement element){
-        waitForElement(element);
+    protected boolean retornaSeElementoEstaHabilitado(MobileElement element){
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada);
+        esperarElemento(element);
         boolean result = element.isEnabled();
         //ExtentReportUtils.addTestInfo(3, "RETURN: " + result);
         log.info("Elemento "+element+" está habilitado = "+result);
         return result;
     }
-    protected boolean returnIfElementIsSelected(MobileElement element){
-        waitForElement(element);
+    protected boolean retornaSeElementoEstaSelecionado(MobileElement element){
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada);
+        esperarElemento(element);
         boolean result = element.isSelected();
         //ExtentReportUtils.addTestInfo(3, "RETURN: " + result);
         log.info("Elemento "+element+" está selecionado = "+result);
         return result;
     }
-    protected void scrollUsingTouchActions_ByElements(MobileElement startElement, MobileElement endElement, int seconds) {
+    protected void scrollUsandoAcoesTouch_ByElements(MobileElement startElement, MobileElement endElement, int seconds) {
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada);
         TouchAction actions = new TouchAction(driver);
         actions.press(PointOption.point(startElement.getLocation().x,startElement.getLocation().y))
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(seconds)))
                 .moveTo(PointOption.point(endElement.getLocation().x,endElement.getLocation().y)).release().perform();
     }
-    protected void scrollUsingTouchActions(int startX,int startY, int endX, int endY, int seconds) {
+    protected void scrollUsandoAcoesTouch(int startX,int startY, int endX, int endY, int seconds) {
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada);
         TouchAction actions = new TouchAction(driver);
         actions.press(PointOption.point(startX,startY))
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(seconds)))
                 .moveTo(PointOption.point(endX,endY)).release().perform();
     }
-    protected void longPress(MobileElement element) {
-        waitForElement(element);
+    protected void pressionarLongo(MobileElement element) {
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada);
+        esperarElemento(element);
         TouchActions action = new TouchActions(driver);
         action.longPress(element);
         action.perform();
     }
     protected void scrolling(String direction){
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         HashMap<String, String> scrollObject = new HashMap<String, String>();
         scrollObject.put("direction", direction);
         js.executeScript("mobile: scroll", scrollObject);
     }
     protected void tap(MobileElement element){
-        waitForElement(element);
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada);
+        esperarElemento(element);
         TouchActions action = new TouchActions(driver);
         action.singleTap(element);
         action.perform();
     }
     protected void doubleTap(MobileElement element){
-        waitForElement(element);
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada);
+        esperarElemento(element);
         TouchActions action = new TouchActions(driver);
         action.doubleTap(element);
         action.perform();
