@@ -9,7 +9,7 @@ public class HomePage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.ImageButton")
     private MobileElement btnMenu;
 
-    public void clickMenu()
+    public void clicarBtnMenu()
     {
         clicar(btnMenu);
     }

@@ -6,7 +6,6 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class MenuPage extends BasePage {
 
-    //android.widget.Button[@text='7']
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Login Page']")
     private MobileElement btnLoginPage;
 

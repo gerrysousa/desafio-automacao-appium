@@ -31,7 +31,7 @@ public class LoginPage extends BasePage
     {
         escrever(passwordField,password);
     }
-    public void clickLoginBtn()
+    public void clicarBtnLogin()
     {
         clicar(loginBtn);
     }
