@@ -39,4 +39,15 @@ public class InputControlsTests extends BaseTests {
         String radioMarcadoFinal = new InputControlsRadioButtonsPage().obterRadioButtonMarcado();
         Assert.assertEquals(radioMarcadoFinal, "Services");
     }
+
+    @Test(priority = 1, description = "Teste para manipular campo Toggle buttons")
+    public void Test_ManipularCampoToggleButtons() {
+        new InputControlsSteps().AcessarInputControlsToggleButton();
+        String toggleInicial = new InputControlsToggleButtonPage().obterStatusSwitch();
+        Assert.assertEquals(toggleInicial, "OFF");
+
+        new InputControlsToggleButtonPage().clicarBtnSwitch();
+        String toggleFinal = new InputControlsToggleButtonPage().obterStatusSwitch();
+        Assert.assertEquals(toggleFinal, "ON");
+    }
 }

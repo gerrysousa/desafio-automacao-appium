@@ -150,6 +150,16 @@ public class BasePage {
         log.info("Texto do elemento "+element+" = "+text);
         return text;
     }
+    protected String obterDescricaoDoElemento(MobileElement element){
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada);
+        esperarElemento(element);
+        String text = element.getAttribute("contentDescription");
+        //ExtentReportUtils.addTestInfo(3, "RETURN: " + text);
+        log.info("Texto do elemento "+element+" = "+text);
+        return text;
+    }
+
     protected boolean retornaSeElementoEstaExibido(MobileElement element){
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
         log.info("Ação: '" + metodoChamada);
