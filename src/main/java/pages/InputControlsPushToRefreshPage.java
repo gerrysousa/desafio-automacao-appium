@@ -12,7 +12,7 @@ public class InputControlsPushToRefreshPage extends BasePage {
 
 
 
-    public String obterMensagemExibido()
+    public String obterMensagemExibida()
     {
         String mensagem = obterTexto(lblMensagem);
         return mensagem;
