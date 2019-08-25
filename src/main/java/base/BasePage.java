@@ -1,6 +1,7 @@
 package base;
 
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
@@ -285,7 +286,17 @@ public class BasePage {
         swipe(0.9, 0.1);
     }
 
+    public void tirarScreenShotDaTela() {
+        try
+        {
+            String temp = utils.DataUtils.getScreenshot(getDriver());
+            log.info("Tirar Screenshot da Tela!", MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
+        }
+        catch (Exception e)
+        {
 
+        }
+    }
 
 
 

@@ -78,7 +78,7 @@ public class InputControlsTests extends BaseTests {
         new InputControlsSteps().AcessarInputControlsSubmitButton();
         new InputControlsSubmitButtonPage().clicarBtnSubmit();
 
-        //new InputControlsSubmitButtonPage().TirarScreenShot();
+        new InputControlsSubmitButtonPage().tirarScreenShotDaTela();
         //String textoFinal = new InputControlsSubmitButtonPage().obterMensagemExibida();
         //Assert.assertTrue(textoFinal.contains("Submitted"));
     }

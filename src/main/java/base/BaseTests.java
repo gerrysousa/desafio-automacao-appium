@@ -91,6 +91,7 @@ public class BaseTests {
         if(result.getStatus()==ITestResult.SUCCESS)
         {
             String temp= utils.DataUtils.getScreenshot(getDriver());
+            log.pass("Sucesso!",MediaEntityBuilder.createScreenCaptureFromPath(temp).build());
             log.log(Status.PASS, "Passou fino!!!");
         }
         log.info("[Closing driver]");
@@ -112,6 +113,8 @@ public class BaseTests {
             thread.setName(threadName + " " + threadId);
         }
     }
+
+
 }
 /*
 public class TestBaseAndroid {
