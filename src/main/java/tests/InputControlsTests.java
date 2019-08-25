@@ -62,7 +62,17 @@ public class InputControlsTests extends BaseTests {
         Assert.assertEquals(opcaoFinalSelecionada, "Selected: option 3");
     }
 
+    @Test(priority = 1, description = "Teste para manipular campo Spinner")
+    public void Test_ManipularCampoPullToRefresh() {
+        new InputControlsSteps().AcessarInputControlsPullToRefresh();
+        String textoInicial = new InputControlsPushToRefreshPage().obterMensagemExibido();
+        Assert.assertEquals(textoInicial, "Pull to refresh time");
 
+        new InputControlsPushToRefreshPage().scrollDown();//.scroll(0.3, 0.8);
+        String textoFinal = new InputControlsPushToRefreshPage().obterMensagemExibido();
+        Assert.assertTrue(textoFinal.contains(":"));
+        //Assert.assertEquals(textoFinal, "11:10:14 AM");
+    }
 
 
 

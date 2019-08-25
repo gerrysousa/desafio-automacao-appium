@@ -67,7 +67,7 @@ public class BasePage {
                 esperarElemento(element);
                 element.click();
                 //ExtentReportUtils.addTestInfo(3, "");
-                log.info("Clicou no elemento: "+element);
+                //log.info("Clicou no elemento: "+element);
                 timeOut.stop();
                 return;
             }
@@ -99,11 +99,11 @@ public class BasePage {
 
     protected void escrever(MobileElement element, String text){
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada+"'");
+        log.info("Ação: '" + metodoChamada+"'. Escrever o texto '"+text+"'.");
         esperarElemento(element);
         element.sendKeys(text);
         // ExtentReportUtils.addTestInfo(3, "PARAMETER: " + text);
-        log.info("Escrever o texto '"+text+"' no elemento: "+element);
+        //log.info("Escrever o texto '"+text+"' no elemento: "+element);
     }
     protected void escreverSemEsperarSerVisivel(MobileElement element, String text){
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
@@ -240,6 +240,56 @@ public class BasePage {
         action.doubleTap(element);
         action.perform();
     }
+
+    public void scroll(double inicio, double fim) {
+        Dimension size =  getDriver().manage().window().getSize();
+
+        int x = size.width/2;
+
+        int startY =(int) (size.height* inicio);
+        int endY =(int) (size.height* fim);
+
+        TouchAction actions = new TouchAction(driver);
+        actions.press(PointOption.point(x,startY))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
+                .moveTo(PointOption.point(x,endY)).release().perform();
+    }
+
+    public void swipe(double inicio, double fim) {
+        Dimension size =  getDriver().manage().window().getSize();
+
+        int y = size.height/2;
+
+        int start_x =(int) (size.width* inicio);
+        int end_x =(int) (size.width* fim);
+
+        TouchAction actions = new TouchAction(driver);
+        actions.press(PointOption.point(start_x,y))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
+                .moveTo(PointOption.point(end_x,y)).release().perform();
+    }
+
+    public void scrollDown() {
+        scroll(0.3, 0.8);
+    }
+
+    public void scrollUp() {
+        scroll(0.8, 0.3);
+    }
+
+    public void swipeLeft() {
+        swipe(0.1, 0.9);
+    }
+
+    public void swipeRight() {
+        swipe(0.9, 0.1);
+    }
+
+
+
+
+
+
 }
 
 //    public void escrever(WebElement element, String texto) {
