@@ -2,7 +2,7 @@
 (----)1) Implementar 25 scripts de testes que manipulem um aplicativo móvel Android com Page Objects. 
 (----)2) Alguns scripts devem ler dados de uma planilha Excel para implementar Data-Driven. 
 (----)3) Notem que 25 scripts podem cobrir mais de 25 casos de testes se usarmos Data-Driven. Em outras palavras, implementar 25 CTs usando data-driven não é a mesma coisa que implementar 25 scripts. 
-(----)4) Os casos de testes precisam ser executados em simulador e em um device real. 
+(-OK-)4) Os casos de testes precisam ser executados em simulador e em um device real. 
 
 600 Pontos (Metas 1 até 4 + as metas abaixo) 
 (----)5) Implementar 25 scripts de testes que manipulem um aplicativo móvel iOS com Page Objects. 
@@ -15,3 +15,32 @@
 (-OK-)6) O projeto deverá gerar um relatório de testes automaticamente com screenshots ou vídeos embutidos. Sugestões: Allure Report ou ExtentReport. 
 (----)7) Executar os testes em uma device farm. 
  
+ 
+ 
+
+ 
+ 
+Casos pra Fazer
+- Teste para manipular Timer picker
+- DDT - Teste para manipular Date picker
+- Teste para manipular Gestures
+- Teste para manipular Navigation
+- Teste para manipular Back Navigation
+- Teste para manipular First Navigation Final Navigation
+- Teste para manipular Crash Test
+- Teste para manipular Alert
+- Teste para manipular Toast Alert
+- DDT - Teste para manipular Fixtures (Dificil)
+- Teste para manipular Local Web View 
+- Teste para manipular Web view
+
+Native Components
+- Teste para manipular Image Collection
+- Teste para manipular Content Scrolling
+- Teste para manipular Video Player
+- Teste para manipular Camera
+- Teste para manipular Content Out of View
+- Teste para manipular 
+
+
+
