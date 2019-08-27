@@ -44,6 +44,6 @@ public class InputControlsDatePickerPage extends BasePage {
     }
 
     public String obterDataSelecionada() {
-
+        return "";
     }
 }

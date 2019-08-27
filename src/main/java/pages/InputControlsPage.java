@@ -49,52 +49,53 @@ public class InputControlsPage extends BasePage {
 
 
     public void acessarInputControlsTextFieldPage() {
-        new MenuPage().clicarInputControls();
+        MenuPage menu = new MenuPage();
+        menu.clicarInputControls();
     }
 
     public void acessarInputControlsCheckboxPage() {
-        new InputControlsPage().acessarInputControlsTextFieldPage();
+        acessarInputControlsTextFieldPage();
         clicar(pageCheckbox);
     }
 
     public void acessarInputControlsRadioButtonsPage() {
-        new InputControlsPage().acessarInputControlsCheckboxPage();
+        acessarInputControlsCheckboxPage();
         clicar(pageRadioButtons);
     }
 
     public void acessarInputControlsToggleButtonPage() {
-        new InputControlsPage().acessarInputControlsRadioButtonsPage();
+        acessarInputControlsRadioButtonsPage();
         clicar(pageToggleButton);
     }
 
     public void acessarInputControlsSpinnerPage() {
-        new InputControlsPage().acessarInputControlsToggleButtonPage();
+        acessarInputControlsToggleButtonPage();
         clicar(pageSpinner);
     }
 
     public void acessarInputControlsPullToRefreshPage() {
-        new InputControlsPage().acessarInputControlsSpinnerPage();
+        acessarInputControlsSpinnerPage();
         clicar(pagePullToRefresh);
     }
 
 
     public void acessarInputControlsTimePickerPage() {
-        new InputControlsPage().acessarInputControlsPullToRefreshPage();
+        acessarInputControlsPullToRefreshPage();
         clicar(pageTimePicker);
     }
 
     public void acessarInputControlsDatePickerPage() {
-        new InputControlsPage().acessarInputControlsTimePickerPage();
+        acessarInputControlsTimePickerPage();
         clicar(pageDatePicker);
     }
 
     public void acessarInputControlsSubmitButtonPage() {
-        new InputControlsPage().acessarInputControlsDatePickerPage();
+        acessarInputControlsDatePickerPage();
         clicar(pageSubmitButton);
     }
 
     public void acessarInputControlsGesturesPage() {
-        new InputControlsPage().acessarInputControlsSubmitButtonPage();
+        acessarInputControlsSubmitButtonPage();
         clicar(pageGestures);
     }
 
