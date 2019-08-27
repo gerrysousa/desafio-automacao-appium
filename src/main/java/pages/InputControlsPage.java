@@ -49,8 +49,7 @@ public class InputControlsPage extends BasePage {
 
 
     public void acessarInputControlsTextFieldPage() {
-        MenuPage menu = new MenuPage();
-        menu.clicarInputControls();
+        clicar(pageTextField);
     }
 
     public void acessarInputControlsCheckboxPage() {

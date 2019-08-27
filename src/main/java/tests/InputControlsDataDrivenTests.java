@@ -10,6 +10,10 @@ import utils.Steps.InputControlsSteps;
 import static utils.GlobalParameters.PathProject;
 
 public class InputControlsDataDrivenTests extends BaseTests {
+
+    InputControlsSteps inputControlsSteps;
+    InputControlsDatePickerPage inputControlsDatePickerPage;
+
     @DataProvider
     public Object[][] obterDadosParaSimulacao(){
         Object[][] testObjArray = ExcelUtils.getTableArray(PathProject+"/src/main/resources/TestData.xlsx","datePicker");
@@ -20,9 +24,10 @@ public class InputControlsDataDrivenTests extends BaseTests {
     public void Test_DataDrivenTestSimularPropostasNovoCliente(
             String dataEscolhida
     ){
-        new InputControlsSteps().AcessarInputControlsDatePicker();
-        String dataInicial = new InputControlsDatePickerPage().obterDataSelecionada();
+        inputControlsSteps = new InputControlsSteps();
+        inputControlsDatePickerPage= new InputControlsDatePickerPage();
 
-
+        inputControlsSteps.AcessarInputControlsDatePicker();
+        String dataInicial = inputControlsDatePickerPage.obterDataSelecionada();
     }
 }
