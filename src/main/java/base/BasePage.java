@@ -298,7 +298,12 @@ public class BasePage {
         }
     }
 
+    public boolean verificarSeExisteTextoNaPagina(String texto) {
+        log.info("Verifica se existe o texto na pagina, com o valor: '"+texto+"'");
+        boolean existe = getDriver().getPageSource().contains(texto);
 
+        return existe;
+    }
 
 
 }

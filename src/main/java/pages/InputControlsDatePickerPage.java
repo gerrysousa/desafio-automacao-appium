@@ -6,44 +6,62 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class InputControlsDatePickerPage extends BasePage {
-    @iOSFindBy(accessibility= "Username Input Field")
-    @AndroidFindBy(accessibility= "Username Input Field")
-    private MobileElement usernameField;
+    //Mapeamento
+    @iOSFindBy(id= "android:id/date_picker_header_year")
+    @AndroidFindBy(id= "android:id/date_picker_header_year")
+    private MobileElement lblAno;
 
-    @iOSFindBy(accessibility = "Password Input Field")
-    @AndroidFindBy(accessibility = "Password Input Field")
-    private MobileElement passwordField;
+    @iOSFindBy(id= "android:id/date_picker_header_date")
+    @AndroidFindBy(id= "android:id/date_picker_header_date")
+    private MobileElement lblDiaSelecionado;
 
-    @iOSFindBy(accessibility = "Login Button")
-    @AndroidFindBy(accessibility = "Login Button")
-    private MobileElement loginBtn;
+    @iOSFindBy(id= "android:id/next")
+    @AndroidFindBy(id= "android:id/next")
+    private MobileElement btnMesProximo;
 
-    @iOSFindBy(xpath = "//android.widget.TextView[@text='Login Page']")
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Login Page']")
-    private MobileElement btnLoginPage;
+    @iOSFindBy(id= "android:id/prev")
+    @AndroidFindBy(id= "android:id/prev")
+    private MobileElement btnMesAnterior;
 
-    @iOSFindBy(accessibility = "Alt Message")
-    @AndroidFindBy(accessibility = "Alt Message")
-    private MobileElement message;
+    @iOSFindBy(id= "com.amazonaws.devicefarm.android.referenceapp:id/input_date_display")
+    @AndroidFindBy(id= "com.amazonaws.devicefarm.android.referenceapp:id/input_date_display")
+    private MobileElement lblDataCompletaSelecionada;
 
-    public void preencherNome(String username)
+    @iOSFindBy(id= "android:id/month_view")
+    @AndroidFindBy(id= "android:id/month_view")
+    private MobileElement gridCalendario;
+
+
+
+
+    //Fim mapeamento
+    //Ações
+    public void clicarLblAno()
     {
-        escrever(usernameField,username);
+        clicar(lblAno);
     }
-    public void preencherSenha(String password)
+
+    public void clicarBtnMesProximo()
     {
-        escrever(passwordField,password);
+        clicar(btnMesProximo);
     }
-    public void clicarBtnLogin()
+
+    public void clicarBtnMesAnterior()
     {
-        clicar(loginBtn);
+        clicar(btnMesAnterior);
     }
-    public String getMessageText()
+
+    public void clicarNoDiaDoCalendario(String dia)
     {
-        return message.getText();
+        clicarPorTexto(dia);
     }
 
     public String obterDataSelecionada() {
-        return "";
+        String texto = obterTexto(lblDataCompletaSelecionada);
+        return texto;
     }
+
+
+
+    //Fim Ações
 }
