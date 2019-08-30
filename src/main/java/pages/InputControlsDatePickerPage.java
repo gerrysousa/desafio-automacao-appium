@@ -4,6 +4,7 @@ import base.BasePage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSFindBy;
+import org.apache.commons.lang3.StringUtils;
 
 public class InputControlsDatePickerPage extends BasePage {
     //Mapeamento
@@ -57,7 +58,16 @@ public class InputControlsDatePickerPage extends BasePage {
     }
 
     public String obterDataSelecionada() {
-        String texto = obterTexto(lblDataCompletaSelecionada);
+        String aux = obterTexto(lblDataCompletaSelecionada);
+
+        String [] dateParts = aux.split("/");
+        String mes = dateParts[0];
+        String dia = dateParts[1];
+        String ano = dateParts[2];
+        dia = StringUtils.leftPad(dia, 2, "0");
+        mes = StringUtils.leftPad(mes, 2, "0");
+
+        String texto = dia+"/"+mes+"/"+ano;
         return texto;
     }
 

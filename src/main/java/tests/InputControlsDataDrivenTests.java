@@ -23,10 +23,10 @@ public class InputControlsDataDrivenTests extends BaseTests {
     }
 
     @Test(dataProvider="obterDadosParaSimulacao")
-    public void Test_DataDrivenTestSimularPropostasNovoCliente(
+    public void Test_ManipularCampoDatePicker(
             String dataEscolhida
     ){
-        String dataPadrao = "7/5/1994";
+        String dataPadrao = "05/07/1994";
         inputControlsSteps = new InputControlsSteps();
         inputControlsDatePickerPage= new InputControlsDatePickerPage();
         inputControlsDatePickerSteps= new InputControlsDatePickerSteps();
