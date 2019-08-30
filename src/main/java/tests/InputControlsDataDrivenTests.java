@@ -39,6 +39,6 @@ public class InputControlsDataDrivenTests extends BaseTests {
         inputControlsDatePickerSteps.SelecionarNovaData(dataEscolhida);
 
         String dataFinal = inputControlsDatePickerPage.obterDataSelecionada();
-        Assert.assertEquals(dataFinal, dataEscolhida);
+        Assert.assertEquals(dataFinal, dataEscolhida);//Expected:21/01/1990 --- Actual:1/21/1990
     }
 }

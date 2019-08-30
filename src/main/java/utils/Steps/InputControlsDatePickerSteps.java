@@ -8,9 +8,14 @@ public class InputControlsDatePickerSteps extends BasePage {
     InputControlsDatePickerPage inputControlsDatePickerPage;
 
     public void SelecionarNovaData(String dataEscolhida) {
-        String mes="05";
-        String dia="21";
-        String ano="1990";
+//        String mes="05";
+//        String dia="21";
+//        String ano="1990";
+        String [] dateParts = dataEscolhida.split("/");
+        String dia = dateParts[0];
+        String mes = dateParts[1];
+        String ano = dateParts[2];
+
 
         escolherAno(ano);
         escolherMes(mes);
