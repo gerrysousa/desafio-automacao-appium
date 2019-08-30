@@ -8,9 +8,9 @@ public class InputControlsDatePickerSteps extends BasePage {
     InputControlsDatePickerPage inputControlsDatePickerPage;
 
     public void SelecionarNovaData(String dataEscolhida) {
-        String mes=dataEscolhida.substring(1,2);
-        String dia="";
-        String ano="";
+        String mes="05";
+        String dia="21";
+        String ano="1990";
 
         escolherAno(ano);
         escolherMes(mes);
@@ -24,14 +24,14 @@ public class InputControlsDatePickerSteps extends BasePage {
 
         inputControlsDatePickerPage.clicarLblAno();
 
-        while (verificarSeExisteTextoNaPagina(ano)||i<10) {
-            if((anoInt>1994))
+        while (!verificarSeExisteTextoNaPagina(ano)&&i<10) {
+            if((anoInt<1994))
             {
-               scroll(0.4,0.8);
+               scroll(0.5,0.8);
             }
             else
             {
-                scroll(0.7,0.2);
+                scroll(0.7,0.4);
             }
             i++;
         }
@@ -59,7 +59,7 @@ public class InputControlsDatePickerSteps extends BasePage {
         mesString[ 11 ] = "November";
         mesString[ 12 ] = "December";
 
-        while (verificarSeExisteTextoNaPagina(mesString[mesInt])||i<10) {
+        while (!(verificarSeExisteTextoNaPagina(mesString[mesInt]))&&i<10) {
             if((mesInt>7))
             {
                 inputControlsDatePickerPage.clicarBtnMesProximo();
@@ -70,7 +70,7 @@ public class InputControlsDatePickerSteps extends BasePage {
             }
             i++;
         }
-        clicarPorTexto(mes);
+        //clicarPorTexto(mes);
     }
 
     public void escolherDia(String dia) {

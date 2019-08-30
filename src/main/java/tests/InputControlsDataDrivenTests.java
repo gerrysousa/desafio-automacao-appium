@@ -38,5 +38,7 @@ public class InputControlsDataDrivenTests extends BaseTests {
 
         inputControlsDatePickerSteps.SelecionarNovaData(dataEscolhida);
 
+        String dataFinal = inputControlsDatePickerPage.obterDataSelecionada();
+        Assert.assertEquals(dataFinal, dataEscolhida);
     }
 }
