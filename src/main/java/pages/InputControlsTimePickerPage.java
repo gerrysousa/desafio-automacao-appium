@@ -4,9 +4,6 @@ import base.BasePage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSFindBy;
-import org.apache.commons.lang3.StringUtils;
-
-import static base.DriverFactory.getDriver;
 
 public class InputControlsTimePickerPage extends BasePage {
     //Mapeamento
@@ -65,12 +62,12 @@ public class InputControlsTimePickerPage extends BasePage {
 
     public void escreverHora(String hora)
     {
-        escrever(txtHora, hora);
+        limparDepoisEscrever(txtHora, hora);
     }
 
     public void escreverMinutos(String minutos)
     {
-        escrever(txtMinutos, minutos);
+        limparDepoisEscrever(txtMinutos, minutos);
     }
 
     public void clicarBtnRelogio(){

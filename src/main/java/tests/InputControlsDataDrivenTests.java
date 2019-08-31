@@ -26,6 +26,12 @@ public class InputControlsDataDrivenTests extends BaseTests {
         return (testObjArray);
     }
 
+    @DataProvider
+    public Object[][] obterDadosParaTesteTimePicker(){
+        Object[][] testObjArray = ExcelUtils.getTableArray(PathProject+"/src/main/resources/TestData.xlsx","timePicker");
+        return (testObjArray);
+    }
+
     @Test(dataProvider="obterDadosParaTesteDatePicker")
     public void Test_ManipularCampoDatePicker(
             String dataEscolhida
@@ -56,16 +62,16 @@ public class InputControlsDataDrivenTests extends BaseTests {
         inputControlsSteps = new InputControlsSteps();
         inputControlsTimePickerPage= new InputControlsTimePickerPage();
         inputControlsTimePickerSteps= new InputControlsTimePickerSteps();
-
+        String horaNova = inputControlsTimePickerSteps.converterAmPmNovaHora(hora, minutos, AmPm);//12:30 >> 0:30
 
         inputControlsSteps.AcessarInputControlsTimePicker();
         String textoInicial = inputControlsTimePickerPage.obterHoraSelecionada();
         Assert.assertEquals(textoInicial, horaNaoSelecionada);
 
-//        inputControlsDatePickerSteps.SelecionarNovaData(dataEscolhida);
-//
-//        String dataFinal = inputControlsDatePickerPage.obterDataSelecionada();
-//        Assert.assertEquals(dataFinal, dataEscolhida);//Expected:21/01/1990 --- Actual:1/21/1990
+        inputControlsTimePickerSteps.SelecionarNovaHora(hora, minutos, AmPm);
+
+        String horaSelecionada = inputControlsTimePickerPage.obterHoraSelecionada();
+        Assert.assertEquals(horaNova, horaSelecionada);
     }
 
 
