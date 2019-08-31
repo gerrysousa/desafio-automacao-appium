@@ -18,6 +18,7 @@ public class InputControlsTests extends BaseTests {
     InputControlsSpinnerPage inputControlsSpinnerPage;
     InputControlsPushToRefreshPage inputControlsPushToRefreshPage;
     InputControlsSubmitButtonPage inputControlsSubmitButtonPage;
+    InputControlsGesturesPage inputControlsGesturesPage;
 
     @Test(priority = 1, description = "Teste para manipular campo Text Tield")
     public void Test_ManipularCampoTextField() {
@@ -109,8 +110,19 @@ public class InputControlsTests extends BaseTests {
         inputControlsSteps.AcessarInputControlsSubmitButton();
         inputControlsSubmitButtonPage.clicarBtnSubmit();
         inputControlsSubmitButtonPage.tirarScreenShotDaTela();
-        //String textoFinal = new InputControlsSubmitButtonPage().obterMensagemExibida();
-        //Assert.assertTrue(textoFinal.contains("Submitted"));
+    }
+
+    @Test(priority = 1, description = "Teste para manipular campo Botão Submit")
+    public void Test_ManipularCampoGestures() {
+        inputControlsSteps = new InputControlsSteps();
+        inputControlsGesturesPage = new  InputControlsGesturesPage();
+        String resultado = "Single Tap Up";
+
+        inputControlsSteps.AcessarInputControlsGesture();
+        inputControlsGesturesPage.clicarPadGestos();
+        inputControlsGesturesPage.tirarScreenShotDaTela();
+        String textoFinal = inputControlsGesturesPage.obterTextoLblDisplayGestosExecutados();
+        Assert.assertTrue(textoFinal.contains(resultado));
     }
 
 }

@@ -15,13 +15,20 @@
 (-OK-)6) O projeto deverá gerar um relatório de testes automaticamente com screenshots ou vídeos embutidos. Sugestões: Allure Report ou ExtentReport. 
 (----)7) Executar os testes em uma device farm. 
  
- 
+OK - Test_LoginSucesso 
+OK - Test_LoginInvalido 
+OK - Test_ManipularCampoTextField 
+OK - Test_ManipularCampoCheckBox 
+OK - Test_ManipularCampoRadioButtons 
+OK - Test_ManipularCampoToggleButtons 
+OK - Test_ManipularCampoSpinner 
+OK - Test_ManipularCampoPullToRefresh 
+OK - Test_ManipularCampoBotaoSubmit 
 OK - DDT - Teste para manipular Date picker 
-
+OK - DDT - Teste para manipular Timer picker
  
  
 Casos pra Fazer
-- Teste para manipular Timer picker
 - Teste para manipular Gestures
 - Teste para manipular Navigation
 - Teste para manipular Back Navigation
