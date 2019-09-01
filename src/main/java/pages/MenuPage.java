@@ -5,7 +5,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class MenuPage extends BasePage {
-
+    //Mapeamento
     //@iOSFindBy(accessibility= "Username Input Field")
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Login Page']")
     private MobileElement btnLoginPage;
@@ -14,6 +14,12 @@ public class MenuPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Input Controls']")
     private MobileElement btnInputControls;
 
+    //@iOSFindBy(accessibility= "Username Input Field")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Nested Views']")
+    private MobileElement btnNestedViews;
+
+    //Fim Mapeamento
+    //Ações
     public void clicarBtnLoginPage()
     {
         clicar(btnLoginPage);
@@ -22,4 +28,10 @@ public class MenuPage extends BasePage {
     {
         clicar(btnInputControls);
     }
+
+    public void clicarBtnNestedViews()
+    {
+        clicar(btnNestedViews);
+    }
+
 }
