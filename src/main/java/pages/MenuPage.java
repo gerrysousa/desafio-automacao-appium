@@ -22,6 +22,11 @@ public class MenuPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Local Web View']")
     private MobileElement btnLocalWebView;
 
+    //@iOSFindBy(accessibility= "Username Input Field")
+    @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/drawerList")
+    private MobileElement menuLista;
+
+
     //Fim Mapeamento
     //Ações
     public void clicarBtnLoginPage()
@@ -39,7 +44,11 @@ public class MenuPage extends BasePage {
     }
 
     public void clicarBtnLocalWebViewPage() {
-        scroll(0.8, 0.3);
+        excutarScrowDownMenuLista();
         clicar(btnLocalWebView);
+    }
+
+    public void excutarScrowDownMenuLista() {
+        scrollElement(menuLista,0.8, 0.3);
     }
 }
