@@ -16,12 +16,19 @@ public class NestedViewsPage extends BasePage {
 
     @iOSFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/up_navigation_content_text")
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/up_navigation_content_text")
-    private MobileElement lblResultadoFinal;
+    private MobileElement lblResultadoFinalNext;
 
     @iOSFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/nested_back_button")
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/nested_up_button")
     private MobileElement btnNextLevel;
 
+    @iOSFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/back_navigation_next_button")
+    @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/back_navigation_next_button")
+    private MobileElement btnBackNextLevel;
+
+    @iOSFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/back_navigation_counter")
+    @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/back_navigation_counter")
+    private MobileElement lblResultadoFinalBack;
 
     public void clicarBtnUpNavigation()
     {
@@ -37,8 +44,17 @@ public class NestedViewsPage extends BasePage {
         clicar(btnNextLevel);
     }
 
-    public String obterTextoLevelFinal() {
-    String texto = obterTexto(lblResultadoFinal);
+    public void clicarBtnBackNextLevel() {
+        clicar(btnBackNextLevel);
+    }
+
+    public String obterTextoLevelFinalNext() {
+    String texto = obterTexto(lblResultadoFinalNext);
     return texto;
+    }
+
+    public String obterTextoLevelFinalBack() {
+        String texto = obterTexto(lblResultadoFinalBack);
+        return texto;
     }
 }

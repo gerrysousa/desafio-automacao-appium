@@ -27,10 +27,11 @@ OK - Test_ManipularCampoBotaoSubmit
 OK - DDT - Teste para manipular Date picker 
 OK - DDT - Teste para manipular Timer picker
 OK - Teste para manipular Gestures 
-OK - Teste para manipular Navigation
+OK - Teste para manipular Next Navigation
+OK - Teste para manipular Back Navigation
+
  
 Casos pra Fazer
-- Teste para manipular Back Navigation
 - Teste para manipular First Navigation Final Navigation
 - Teste para manipular Crash Test
 - Teste para manipular Alert

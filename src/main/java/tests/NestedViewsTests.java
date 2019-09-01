@@ -27,7 +27,24 @@ public class NestedViewsTests extends BaseTests {
         nestedViewsPage.clicarBtnUpNavigation();
         nestedViewsPage.clicarBtnNextLevels();
 
-        String texto = nestedViewsPage.obterTextoLevelFinal();
+        String texto = nestedViewsPage.obterTextoLevelFinalNext();
+        Assert.assertEquals(texto, textoPaginaFinal);
+    }
+
+    @Test(priority = 1, description = "teste de navegacao back")
+    public void Test_NestedViewsBackNavigation() {
+        homePage = new HomePage();
+        menuPage = new MenuPage();
+        nestedViewsPage= new NestedViewsPage();
+
+        String textoPaginaFinal = "2";
+
+        homePage.clicarBtnMenu();
+        menuPage.clicarBtnNestedViews();
+        nestedViewsPage.clicarBtnBackNavigation();
+        nestedViewsPage.clicarBtnBackNextLevel();
+
+        String texto = nestedViewsPage.obterTextoLevelFinalBack();
         Assert.assertEquals(texto, textoPaginaFinal);
     }
 }
