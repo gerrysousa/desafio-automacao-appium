@@ -14,7 +14,7 @@ public class NestedViewsTests extends BaseTests {
     private MenuPage menuPage;
     NestedViewsPage nestedViewsPage;
 
-    @Test(priority = 1, description = "teste de navegacao1")
+    @Test(priority = 1, description = "teste de navegacao next")
     public void Test_NestedViewsUpNavigation() {
         homePage = new HomePage();
         menuPage = new MenuPage();

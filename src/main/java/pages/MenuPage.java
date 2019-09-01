@@ -18,6 +18,10 @@ public class MenuPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Nested Views']")
     private MobileElement btnNestedViews;
 
+    //@iOSFindBy(accessibility= "Username Input Field")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Local Web View']")
+    private MobileElement btnLocalWebView;
+
     //Fim Mapeamento
     //Ações
     public void clicarBtnLoginPage()
@@ -34,4 +38,8 @@ public class MenuPage extends BasePage {
         clicar(btnNestedViews);
     }
 
+    public void clicarBtnLocalWebViewPage() {
+        scroll(0.8, 0.3);
+        clicar(btnLocalWebView);
+    }
 }
