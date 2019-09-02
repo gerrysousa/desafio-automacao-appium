@@ -29,13 +29,13 @@ OK - DDT - Teste para manipular Timer picker
 OK - Teste para manipular Gestures 
 OK - Teste para manipular Next Navigation
 OK - Teste para manipular Back Navigation
-
+OK - Teste para manipular Alert
+OK - Teste para manipular Toast Alert
  
 Casos pra Fazer
+
 - Teste para manipular First Navigation Final Navigation
 - Teste para manipular Crash Test
-- Teste para manipular Alert
-- Teste para manipular Toast Alert
 - DDT - Teste para manipular Fixtures (Dificil)
 - Teste para manipular Local Web View 
 - Teste para manipular Web view

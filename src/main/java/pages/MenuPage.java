@@ -26,6 +26,9 @@ public class MenuPage extends BasePage {
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/drawerList")
     private MobileElement menuLista;
 
+    //@iOSFindBy(accessibility= "Username Input Field")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Alerts']")
+    private MobileElement btnAlertsDialogsPage;
 
     //Fim Mapeamento
     //Ações
@@ -50,5 +53,9 @@ public class MenuPage extends BasePage {
 
     public void excutarScrowDownMenuLista() {
         scrollElement(menuLista,0.8, 0.3);
+    }
+
+    public void clicarBtnAlertsDialogsPage() {
+        clicar(btnAlertsDialogsPage);
     }
 }
