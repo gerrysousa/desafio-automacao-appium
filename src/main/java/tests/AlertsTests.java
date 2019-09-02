@@ -33,13 +33,10 @@ public class AlertsTests extends BaseTests {
         menuPage = new MenuPage();
         alertsDialogsPage= new AlertsDialogsPage();
 
-        String textoAlerta = "This is the alert message";
-
         homePage.clicarBtnMenu();
         menuPage.clicarBtnAlertsDialogsPage();
 
         alertsDialogsPage.clicarBtnToast();
         alertsDialogsPage.tirarScreenShotDaTela();
-
     }
 }

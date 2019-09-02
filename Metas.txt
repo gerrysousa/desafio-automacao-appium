@@ -31,9 +31,10 @@ OK - Teste para manipular Next Navigation
 OK - Teste para manipular Back Navigation
 OK - Teste para manipular Alert
 OK - Teste para manipular Toast Alert
+OK - Teste para manipular Image Collection
+
  
 Casos pra Fazer
-
 - Teste para manipular First Navigation Final Navigation
 - Teste para manipular Crash Test
 - DDT - Teste para manipular Fixtures (Dificil)
@@ -41,7 +42,6 @@ Casos pra Fazer
 - Teste para manipular Web view
 
 Native Components
-- Teste para manipular Image Collection
 - Teste para manipular Content Scrolling
 - Teste para manipular Video Player
 - Teste para manipular Camera
