@@ -71,20 +71,16 @@ public class DriverFactory {
     }
     public static AppiumDriver<MobileElement> createDriverDeviceFarm(String deviceType){
         try {
-            if (deviceType == "Android") {
+            if (deviceType.equals("Android")) {
                 DesiredCapabilities caps = new DesiredCapabilities();
                 caps.setCapability("platformName", GlobalParameters.AndroidPlatformName);
-                caps.setCapability("platformVersion", GlobalParameters.AndroidPlatformVersion);
-                caps.setCapability("deviceName", GlobalParameters.AndroidDeviceName);
-                caps.setCapability("app", GlobalParameters.AndroidAppPath);
-                caps.setCapability("browserName", GlobalParameters.AndroidBrowserName);
-                caps.setCapability("udid", GlobalParameters.AndroidUDID);
-                caps.setCapability("noReset", GlobalParameters.AndroidNoReset);
-                caps.setCapability("fullReset", GlobalParameters.AndroidFullReset);
-                caps.setCapability("orientation", GlobalParameters.AndroidOrientation);
                 caps.setCapability("automationName", GlobalParameters.AppiumAutomationName);
-                driver = new AndroidDriver(new URL(GlobalParameters.AppiumServer), caps);
-            } else if (deviceType == "IOS") {
+                caps.setCapability("testobject_api_key", GlobalParameters.TestObjectApiKey);
+                caps.setCapability("appiumVersion", GlobalParameters.AppiumVersion);
+
+                driver = new AndroidDriver(new URL(GlobalParameters.TestObjectURL), caps);
+            }
+            else if (deviceType == "IOS") {
             }
 
         }

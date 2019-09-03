@@ -5,75 +5,79 @@ import pages.InputControlsPage;
 import pages.MenuPage;
 
 public class InputControlsSteps {
+    private HomePage homePage = new HomePage();
+    private MenuPage menuPage = new MenuPage();
+    private InputControlsPage inputControlsPage = new InputControlsPage();
+
 
     public void AcessarInputControlsTextField()
     {
-        new HomePage().clicarBtnMenu();
-        new MenuPage().clicarInputControls();
-        new InputControlsPage().acessarInputControlsTextFieldPage();
+        homePage.clicarBtnMenu();
+        menuPage.clicarInputControls();
+        inputControlsPage.acessarInputControlsTextFieldPage();
     }
 
     public void AcessarInputControlsCheckbox()
     {
-        new HomePage().clicarBtnMenu();
-        new MenuPage().clicarInputControls();
-        new InputControlsPage().acessarInputControlsCheckboxPage();
+        homePage.clicarBtnMenu();
+        menuPage.clicarInputControls();
+        inputControlsPage.acessarInputControlsCheckboxPage();
     }
 
     public void AcessarInputControlsRadioButtons()
     {
-        new HomePage().clicarBtnMenu();
-        new MenuPage().clicarInputControls();
-        new InputControlsPage().acessarInputControlsRadioButtonsPage();
+        homePage.clicarBtnMenu();
+        menuPage.clicarInputControls();
+        inputControlsPage.acessarInputControlsRadioButtonsPage();
     }
 
     public void AcessarInputControlsToggleButton()
     {
-        new HomePage().clicarBtnMenu();
-        new MenuPage().clicarInputControls();
-        new InputControlsPage().acessarInputControlsToggleButtonPage();
+        homePage.clicarBtnMenu();
+        menuPage.clicarInputControls();
+        inputControlsPage.acessarInputControlsToggleButtonPage();
     }
 
     public void AcessarInputControlsSpinner()
     {
-        new HomePage().clicarBtnMenu();
-        new MenuPage().clicarInputControls();
-        new InputControlsPage().acessarInputControlsSpinnerPage();
+        homePage.clicarBtnMenu();
+        menuPage.clicarInputControls();
+        inputControlsPage.acessarInputControlsSpinnerPage();
     }
 
     public void AcessarInputControlsPullToRefresh()
     {
-        new HomePage().clicarBtnMenu();
-        new MenuPage().clicarInputControls();
-        new InputControlsPage().acessarInputControlsPullToRefreshPage();
+        homePage.clicarBtnMenu();
+        menuPage.clicarInputControls();
+        inputControlsPage.acessarInputControlsPullToRefreshPage();
     }
 
     public void AcessarInputControlsTimePicker()
     {
-        new HomePage().clicarBtnMenu();
-        new MenuPage().clicarInputControls();
-        new InputControlsPage().acessarInputControlsTimePickerPage();
+        homePage.clicarBtnMenu();
+        menuPage.clicarInputControls();
+        inputControlsPage.acessarInputControlsTimePickerPage();
     }
 
     public void AcessarInputControlsDatePicker()
     {
-        new HomePage().clicarBtnMenu();
-        new MenuPage().clicarInputControls();
-        new InputControlsPage().acessarInputControlsDatePickerPage();
+        homePage.clicarBtnMenu();
+        menuPage.clicarInputControls();
+        inputControlsPage.acessarInputControlsDatePickerPage();
     }
 
     public void AcessarInputControlsSubmitButton()
     {
-        new HomePage().clicarBtnMenu();
-        new MenuPage().clicarInputControls();
-        new InputControlsPage().acessarInputControlsSubmitButtonPage();
+        homePage.clicarBtnMenu();
+        menuPage.clicarInputControls();
+        inputControlsPage.acessarInputControlsSubmitButtonPage();
     }
 
     public void AcessarInputControlsGesture()
     {
-        new HomePage().clicarBtnMenu();
-        new MenuPage().clicarInputControls();
-        new InputControlsPage().acessarInputControlsGesturesPage();
+        homePage.clicarBtnMenu();
+        menuPage.clicarInputControls();
+        inputControlsPage.acessarInputControlsGesturesPage();
     }
 
 }

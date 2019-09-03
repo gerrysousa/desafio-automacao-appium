@@ -298,9 +298,38 @@ public class BasePage {
         }
     }
 
+    public boolean verificarSeExisteTextoNaPagina(String texto) {
+        log.info("Verifica se existe o texto na pagina, com o valor: '"+texto+"'");
+        boolean existe = getDriver().getPageSource().contains(texto);
 
+        return existe;
+    }
 
+    public void scrollElement(MobileElement elemento, double inicio, double fim) {
+        int x= elemento.getLocation().x + (elemento.getSize().width / 2);
 
+        int start_y =(int) (elemento.getSize().height* inicio);
+        int end_y =(int) (elemento.getSize().height* fim);
+
+        TouchAction actions = new TouchAction(getDriver());
+        actions.press(PointOption.point(x,start_y))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
+                .moveTo(PointOption.point(x,end_y)).release().perform();
+    }
+
+//    public void SwipeElement(MobileElement elemento, double inicio, double fim) {
+//        int y= elemento.getLocation().y + (elemento.getSize().height / 2);
+//
+//        int start_x =(int) (elemento.getSize().width* inicio);
+//        int end_x =(int) (elemento.getSize().width* fim);
+//
+//        new TouchAction(getDriver())
+//                .press(start_x, y)
+//                .waitAction(Duration.ofMillis(500))
+//                .moveTo(end_x, y)
+//                .release()
+//                .perform()
+//    }
 }
 
 //    public void escrever(WebElement element, String texto) {

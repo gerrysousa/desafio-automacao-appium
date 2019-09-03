@@ -25,6 +25,7 @@ public class GlobalParameters {
     public static String AppiumAutomationName;
     public static String AppiumIPAddress;
     public static int AppiumPort;
+    public static String AppiumVersion;
 
     public static String AndroidDeviceName;
     public static String AndroidUDID;
@@ -39,6 +40,9 @@ public class GlobalParameters {
     public static String AndroidFullReset;
     public static String AndroidOrientation;
     public static String PathProject = System.getProperty("user.dir");
+
+    public static String TestObjectApiKey;
+    public static String TestObjectURL;
 
     private Properties properties;
 
@@ -72,6 +76,7 @@ public class GlobalParameters {
         AppiumIPAddress = properties.getProperty("AppiumIPAddress");
         AppiumPort = Integer.parseInt(properties.getProperty("AppiumPort"));
         AppiumAutomationName=  properties.getProperty("AppiumAutomationName");
+        AppiumVersion= properties.getProperty("AppiumVersion");
 
         AndroidDeviceName  = properties.getProperty("AndroidDeviceName");
         AndroidUDID= properties.getProperty("AndroidUDID");
@@ -85,5 +90,7 @@ public class GlobalParameters {
         AndroidFullReset=properties.getProperty("AndroidFullReset");
         AndroidOrientation=properties.getProperty("AndroidOrientation");
 
+        TestObjectApiKey=properties.getProperty("TestObjectApiKey");
+        TestObjectURL=properties.getProperty("TestObjectURL");
     }
 }
