@@ -37,6 +37,7 @@ OK - Teste para acessar Video Player
 OK - Teste para acessar Camera
 OK - Teste para acessar Content Out of View
 OK - Teste para acessar Fixtures
+OK - Teste para acessar Fixtures e obter status do NFC
 
  
 Casos pra Fazer
@@ -45,7 +46,8 @@ Casos pra Fazer
 - DDT - Teste para manipular Fixtures (Dificil)
 - Teste para manipular Local Web View 
 - Teste para manipular Web view
-
+- Teste para acessar Fixtures e obter status do wi-fi
+- Teste para acessar Fixtures e obter status do Bluetooth
 
 
 

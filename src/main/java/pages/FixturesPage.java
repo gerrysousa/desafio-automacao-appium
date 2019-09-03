@@ -10,9 +10,19 @@ public class FixturesPage extends BasePage {
     @AndroidFindBy(xpath= "//android.widget.TextView[@text='Fixtures']")
     private MobileElement lblTitulo;
 
+    @iOSFindBy(id= "com.amazonaws.devicefarm.android.referenceapp:id/nfc")
+    @AndroidFindBy(id= "com.amazonaws.devicefarm.android.referenceapp:id/nfc")
+    private MobileElement lblStatusNFC;
+
     //Ações
     public String obterTextoTitulo() {
         String texto = obterTexto(lblTitulo);
         return texto;
     }
+
+    public String obterStatusNFC() {
+        String texto = obterTexto(lblStatusNFC);
+        return texto;
+    }
+
 }
