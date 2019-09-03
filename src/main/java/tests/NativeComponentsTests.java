@@ -13,7 +13,7 @@ public class NativeComponentsTests extends BaseTests {
     NativeComponentsImageCollectionPage nativeComponentsImageCollectionPage;
     NativeComponentsSteps nativeComponentsSteps;
     NativeComponentsContentScrollingPage nativeComponentsContentScrollingPage;
-
+    NativeComponentsVideoPlayerPage nativeComponentsVideoPlayerPage;
 
     @Test(priority = 1, description = "Teste para acessar Image Collection")
     public void Test_AcessarImageCollection() {
@@ -46,6 +46,20 @@ public class NativeComponentsTests extends BaseTests {
         String textoTituloImagemColletion = "Content Scrolling";
         String teste2 = nativeComponentsContentScrollingPage.obterTextoTitulo();
         nativeComponentsContentScrollingPage.tirarScreenShotDaTela();
+
+        Assert.assertEquals(teste2, textoTituloImagemColletion);
+    }
+
+    @Test(priority = 1, description = "Teste para acessar Video Player")
+    public void Test_AcessarVideoPlayer() {
+        nativeComponentsSteps = new NativeComponentsSteps();
+        nativeComponentsVideoPlayerPage = new NativeComponentsVideoPlayerPage();
+
+        nativeComponentsSteps.acessarVideoPlayerPage();
+
+        String textoTituloImagemColletion = "Video Player";
+        String teste2 = nativeComponentsVideoPlayerPage.obterTextoTitulo();
+        nativeComponentsVideoPlayerPage.tirarScreenShotDaTela();
 
         Assert.assertEquals(teste2, textoTituloImagemColletion);
     }
