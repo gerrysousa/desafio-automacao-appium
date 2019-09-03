@@ -2,7 +2,7 @@
 (-OK-)1) Implementar 25 scripts de testes que manipulem um aplicativo móvel Android com Page Objects. 
 (-OK-)2) Alguns scripts devem ler dados de uma planilha Excel para implementar Data-Driven. 
 (-OK-)3) Notem que 25 scripts podem cobrir mais de 25 casos de testes se usarmos Data-Driven. Em outras palavras, implementar 25 CTs usando data-driven não é a mesma coisa que implementar 25 scripts. 
-(-OK-)4) Os casos de testes precisam ser executados em simulador e em um device real. 
+(-OK-)4) Os casos de testes precisam ser executados em simulador e em um device real.
 
 600 Pontos (Metas 1 até 4 + as metas abaixo) 
 (----)5) Implementar 25 scripts de testes que manipulem um aplicativo móvel iOS com Page Objects. 
@@ -15,37 +15,38 @@
 (-OK-)6) O projeto deverá gerar um relatório de testes automaticamente com screenshots ou vídeos embutidos. Sugestões: Allure Report ou ExtentReport. 
 (----)7) Executar os testes em uma device farm. 
  
-OK - Test_LoginSucesso 
-OK - Test_LoginInvalido 
-OK - Test_ManipularCampoTextField 
-OK - Test_ManipularCampoCheckBox 
-OK - Test_ManipularCampoRadioButtons 
-OK - Test_ManipularCampoToggleButtons 
-OK - Test_ManipularCampoSpinner 
-OK - Test_ManipularCampoPullToRefresh 
-OK - Test_ManipularCampoBotaoSubmit 
-OK - DDT - Teste para manipular Date picker 
-OK - DDT - Teste para manipular Timer picker
-OK - Teste para manipular Gestures 
-OK - Teste para manipular Next Navigation
-OK - Teste para manipular Back Navigation
-OK - Teste para manipular Alert
-OK - Teste para manipular Toast Alert
-OK - Teste para Acessar Image Collection
-OK - Teste para Acessar Content Scrolling
-OK - Teste para acessar Video Player
-OK - Teste para acessar Camera
-OK - Teste para acessar Content Out of View
-OK - Teste para acessar Fixtures
-OK - Teste para acessar Fixtures e obter status do NFC
-OK - Teste para acessar Fixtures e obter status do GPS
-OK - Teste para acessar Fixtures e obter status do Bluetooth
-OK - Teste para acessar Fixtures e obter status do wi-fi
+(01)OK - Test_LoginSucesso 
+(02)OK - Test_LoginInvalido 
+(03)OK - Test_ManipularCampoTextField 
+(04)OK - Test_ManipularCampoCheckBox 
+(05)OK - Test_ManipularCampoRadioButtons 
+(06)OK - Test_ManipularCampoToggleButtons 
+(07)OK - Test_ManipularCampoSpinner 
+(08)OK - Test_ManipularCampoPullToRefresh 
+(09)OK - Test_ManipularCampoBotaoSubmit 
+(10)OK - DDT - Teste para manipular Date picker 
+(11)OK - DDT - Teste para manipular Timer picker
+(12)OK - Teste para manipular Gestures 
+(13)OK - Teste para manipular Next Navigation
+(14)OK - Teste para manipular Back Navigation
+(15)OK - Teste para manipular Alert
+(16)OK - Teste para manipular Toast Alert
+(17)OK - Teste para Acessar Image Collection
+(18)OK - Teste para Acessar Content Scrolling
+(19)OK - Teste para acessar Video Player
+(20)OK - Teste para acessar Camera
+(21)OK - Teste para acessar Content Out of View
+(22)OK - Teste para acessar Fixtures
+(23)OK - Teste para acessar Fixtures e obter status do NFC
+(24)OK - Teste para acessar Fixtures e obter status do GPS
+(25)OK - Teste para acessar Fixtures e obter status do Bluetooth
+(26)OK - Teste para acessar Fixtures e obter status do wi-fi
+
  
-Casos pra Fazer
+Casos possiveis para novos testes
 - Teste para manipular First Navigation Final Navigation
 - Teste para manipular Crash Test
-- DDT - Teste para manipular Fixtures (Dificil)
+- DDT - Teste para manipular Fixtures
 - Teste para manipular Local Web View 
 - Teste para manipular Web view
 

@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!--suite name="PositiveTestSuite" verbose="1" parallel="tests" thread-count="2"-->
+<suite name="Teste na DeviceFarm SauceLabs TestObject" verbose="1" thread-count="2">
+
+    <parameter name="environment" value="deviceFarm"></parameter>
+    <test name="Testes no login na DeviceFarm">
+        <parameter name="OS" value="Android"></parameter>
+        <classes>
+            <class name="tests.LoginTests"></class>
+        </classes>
+    </test>
+
+</suite>
