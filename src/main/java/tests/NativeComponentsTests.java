@@ -15,6 +15,8 @@ public class NativeComponentsTests extends BaseTests {
     NativeComponentsContentScrollingPage nativeComponentsContentScrollingPage;
     NativeComponentsVideoPlayerPage nativeComponentsVideoPlayerPage;
     NativeComponentsCameraPage nativeComponentsCameraPage;
+    NativeComponentsContentOutOfViewPage nativeComponentsContentOutOfViewPage;
+
 
     @Test(priority = 1, description = "Teste para acessar Image Collection")
     public void Test_AcessarImageCollection() {
@@ -78,6 +80,30 @@ public class NativeComponentsTests extends BaseTests {
 
         Assert.assertEquals(teste2, textoTituloImagemColletion);
     }
+
+    @Test(priority = 1, description = "Teste para acessar Content Out of View")
+    public void Test_AcessarContentOutOfView() {
+        nativeComponentsSteps = new NativeComponentsSteps();
+        nativeComponentsContentOutOfViewPage = new NativeComponentsContentOutOfViewPage();
+
+        nativeComponentsSteps.acessarContentOutofViewPage();
+
+        String textoTituloImagemColletion = "Content Out of View";
+        String teste1 = nativeComponentsContentOutOfViewPage.obterTextoTitulo();
+        nativeComponentsContentOutOfViewPage.tirarScreenShotDaTela();
+        Assert.assertEquals(teste1, textoTituloImagemColletion);
+
+        nativeComponentsContentOutOfViewPage.scrollUp();
+        nativeComponentsContentOutOfViewPage.scrollUp();
+
+        String textoComponenteEscondido = "This is hidden text";
+        String teste2 = nativeComponentsContentOutOfViewPage.obterTextoDoComponenteEscondido();
+        nativeComponentsContentOutOfViewPage.tirarScreenShotDaTela();
+        Assert.assertEquals(teste2, textoComponenteEscondido);
+    }
+
+
+
 
 
 }

@@ -35,6 +35,7 @@ OK - Teste para Acessar Image Collection
 OK - Teste para Acessar Content Scrolling
 OK - Teste para acessar Video Player
 OK - Teste para acessar Camera
+OK - Teste para acessar Content Out of View
  
 Casos pra Fazer
 - Teste para manipular First Navigation Final Navigation
@@ -43,9 +44,8 @@ Casos pra Fazer
 - Teste para manipular Local Web View 
 - Teste para manipular Web view
 
-Native Components
-- Teste para acessar Content Out of View
-- Teste para acessar 
+
+
 
 
 
