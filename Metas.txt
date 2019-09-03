@@ -13,7 +13,9 @@
 1000 Pontos (Metas 1 até 8 + as metas abaixo) 
 (-OK-)5) Gravar screenshots ou vídeos automaticamente dos casos de testes. 
 (-OK-)6) O projeto deverá gerar um relatório de testes automaticamente com screenshots ou vídeos embutidos. Sugestões: Allure Report ou ExtentReport. 
-(----)7) Executar os testes em uma device farm. 
+(-OK-)7) Executar os testes em uma device farm. 
+ 
+============================================================================================================================= 
  
 (01)OK - Test_LoginSucesso 
 (02)OK - Test_LoginInvalido 

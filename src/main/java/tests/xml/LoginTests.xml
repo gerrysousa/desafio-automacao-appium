@@ -9,5 +9,4 @@
             <class name="tests.LoginTests"></class>
         </classes>
     </test>
-
 </suite>

@@ -17,6 +17,7 @@ public class LoginTests extends BaseTests {
 
         Assert.assertEquals("You are logged on as admin",message);
     }
+
     @Test (priority = 1, description = "teste de login invalido")
     public void Test_LoginInvalido() {
         String username = "teste123";
