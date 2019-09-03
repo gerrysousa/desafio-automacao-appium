@@ -7,13 +7,14 @@ import pages.*;
 import  utils.Steps.*;
 
 public class NativeComponentsTests extends BaseTests {
-    private HomePage homePage;
-    private MenuPage menuPage;
+    HomePage homePage;
+    MenuPage menuPage;
     NativeComponentsPage nativeComponentsPage;
     NativeComponentsImageCollectionPage nativeComponentsImageCollectionPage;
     NativeComponentsSteps nativeComponentsSteps;
     NativeComponentsContentScrollingPage nativeComponentsContentScrollingPage;
     NativeComponentsVideoPlayerPage nativeComponentsVideoPlayerPage;
+    NativeComponentsCameraPage nativeComponentsCameraPage;
 
     @Test(priority = 1, description = "Teste para acessar Image Collection")
     public void Test_AcessarImageCollection() {
@@ -63,4 +64,20 @@ public class NativeComponentsTests extends BaseTests {
 
         Assert.assertEquals(teste2, textoTituloImagemColletion);
     }
+
+    @Test(priority = 1, description = "Teste para acessar Camera")
+    public void Test_AcessarCamera() {
+        nativeComponentsSteps = new NativeComponentsSteps();
+        nativeComponentsCameraPage = new NativeComponentsCameraPage();
+
+        nativeComponentsSteps.acessarCameraPage();
+
+        String textoTituloImagemColletion = "Camera";
+        String teste2 = nativeComponentsCameraPage.obterTextoTitulo();
+        nativeComponentsCameraPage.tirarScreenShotDaTela();
+
+        Assert.assertEquals(teste2, textoTituloImagemColletion);
+    }
+
+
 }

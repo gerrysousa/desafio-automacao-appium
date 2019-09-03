@@ -31,8 +31,10 @@ OK - Teste para manipular Next Navigation
 OK - Teste para manipular Back Navigation
 OK - Teste para manipular Alert
 OK - Teste para manipular Toast Alert
-OK - Teste para manipular Image Collection
-
+OK - Teste para Acessar Image Collection
+OK - Teste para Acessar Content Scrolling
+OK - Teste para acessar Video Player
+OK - Teste para acessar Camera
  
 Casos pra Fazer
 - Teste para manipular First Navigation Final Navigation
@@ -42,11 +44,8 @@ Casos pra Fazer
 - Teste para manipular Web view
 
 Native Components
-- Teste para manipular Content Scrolling
-- Teste para manipular Video Player
-- Teste para manipular Camera
-- Teste para manipular Content Out of View
-- Teste para manipular 
+- Teste para acessar Content Out of View
+- Teste para acessar 
 
 
 
