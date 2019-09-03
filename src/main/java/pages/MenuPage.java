@@ -34,6 +34,10 @@ public class MenuPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Native Components']")
     private MobileElement btnNativeComponentsPage;
 
+    //@iOSFindBy(accessibility= "Username Input Field")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Fixtures']")
+    private MobileElement btnFixturesPage;
+
     //Fim Mapeamento
     //Ações
     public void clicarBtnLoginPage()
@@ -65,5 +69,10 @@ public class MenuPage extends BasePage {
 
     public void clicarBtnNativeComponentsPage() {
         clicar(btnNativeComponentsPage);
+    }
+
+    public void clicarBtnFixturesPage() {
+        excutarScrowDownMenuLista();
+        clicar(btnFixturesPage);
     }
 }

@@ -36,6 +36,8 @@ OK - Teste para Acessar Content Scrolling
 OK - Teste para acessar Video Player
 OK - Teste para acessar Camera
 OK - Teste para acessar Content Out of View
+OK - Teste para acessar Fixtures
+
  
 Casos pra Fazer
 - Teste para manipular First Navigation Final Navigation
