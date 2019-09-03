@@ -14,6 +14,18 @@ public class FixturesPage extends BasePage {
     @AndroidFindBy(id= "com.amazonaws.devicefarm.android.referenceapp:id/nfc")
     private MobileElement lblStatusNFC;
 
+    @iOSFindBy(id= "com.amazonaws.devicefarm.android.referenceapp:id/gps")
+    @AndroidFindBy(id= "com.amazonaws.devicefarm.android.referenceapp:id/gps")
+    private MobileElement lblStatusGPS;
+
+   // @iOSFindBy(id= "com.amazonaws.devicefarm.android.referenceapp:id/gps")
+    @AndroidFindBy(id= "com.amazonaws.devicefarm.android.referenceapp:id/bluetooth")
+    private MobileElement lblStatusBluetooth;
+
+    // @iOSFindBy(id= "com.amazonaws.devicefarm.android.referenceapp:id/gps")
+    @AndroidFindBy(id= "com.amazonaws.devicefarm.android.referenceapp:id/wifi")
+    private MobileElement lblStatusWiFi;
+
     //Ações
     public String obterTextoTitulo() {
         String texto = obterTexto(lblTitulo);
@@ -25,4 +37,18 @@ public class FixturesPage extends BasePage {
         return texto;
     }
 
+    public String obterStatusGPS() {
+        String texto = obterTexto(lblStatusGPS);
+        return texto;
+    }
+
+    public String obterStatusBluetooth() {
+        String texto = obterTexto(lblStatusBluetooth);
+        return texto;
+    }
+
+    public String obterStatusWiFi() {
+        String texto = obterTexto(lblStatusWiFi);
+        return texto;
+    }
 }

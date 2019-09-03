@@ -1,5 +1,5 @@
 300 Pontos 
-(----)1) Implementar 25 scripts de testes que manipulem um aplicativo móvel Android com Page Objects. 
+(-OK-)1) Implementar 25 scripts de testes que manipulem um aplicativo móvel Android com Page Objects. 
 (-OK-)2) Alguns scripts devem ler dados de uma planilha Excel para implementar Data-Driven. 
 (-OK-)3) Notem que 25 scripts podem cobrir mais de 25 casos de testes se usarmos Data-Driven. Em outras palavras, implementar 25 CTs usando data-driven não é a mesma coisa que implementar 25 scripts. 
 (-OK-)4) Os casos de testes precisam ser executados em simulador e em um device real. 
@@ -38,7 +38,9 @@ OK - Teste para acessar Camera
 OK - Teste para acessar Content Out of View
 OK - Teste para acessar Fixtures
 OK - Teste para acessar Fixtures e obter status do NFC
-
+OK - Teste para acessar Fixtures e obter status do GPS
+OK - Teste para acessar Fixtures e obter status do Bluetooth
+OK - Teste para acessar Fixtures e obter status do wi-fi
  
 Casos pra Fazer
 - Teste para manipular First Navigation Final Navigation
@@ -46,8 +48,9 @@ Casos pra Fazer
 - DDT - Teste para manipular Fixtures (Dificil)
 - Teste para manipular Local Web View 
 - Teste para manipular Web view
-- Teste para acessar Fixtures e obter status do wi-fi
-- Teste para acessar Fixtures e obter status do Bluetooth
+
+
+
 
 
 
