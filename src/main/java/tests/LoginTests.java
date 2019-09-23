@@ -6,26 +6,32 @@ import org.testng.annotations.Test;
 import utils.Steps.LoginSteps;
 
 public class LoginTests extends BaseTests {
+  private LoginSteps loginSteps;
 
     @Test(priority = 1, description = "teste de login valido")
     public void Test_LoginSucesso() {
+        loginSteps  = new LoginSteps();
+
         String username = "admin";
         String password = "password";
+        String mensagemEsperada ="You are logged on as admin";
 
-        new LoginSteps().IrParaLoginPage();
-        String message = new LoginSteps().fazerLogin(username,password);
+        loginSteps.IrParaLoginPage();
+        String message = loginSteps.fazerLogin(username,password);
 
-        Assert.assertEquals("You are logged on as admin",message);
+        Assert.assertEquals(message, mensagemEsperada);
     }
-
     @Test (priority = 1, description = "teste de login invalido")
     public void Test_LoginInvalido() {
+        loginSteps  = new LoginSteps();
+
         String username = "teste123";
         String password = "teste123";
+        String mensagemEsperada = "You gave me the wrong username and password";
 
-        new LoginSteps().IrParaLoginPage();
-        String message = new LoginSteps().fazerLogin(username,password);
+        loginSteps.IrParaLoginPage();
+        String message = loginSteps.fazerLogin(username,password);
 
-        Assert.assertEquals("You gave me the wrong username and password",message);
+        Assert.assertEquals(message,mensagemEsperada);
     }
 }

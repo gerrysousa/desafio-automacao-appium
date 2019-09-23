@@ -5,16 +5,25 @@ import pages.*;
 
 
 public class LoginSteps {
+    private HomePage homePage;
+    private MenuPage menuPage;
+    private LoginPage loginPage;
+
     public void IrParaLoginPage()
     {
-        new HomePage().clicarBtnMenu();
-        new MenuPage().clicarBtnLoginPage();
+        homePage = new HomePage();
+        menuPage = new MenuPage();
+
+        homePage.clicarBtnMenu();
+        menuPage.clicarBtnLoginPage();
     }
     public String fazerLogin(String username, String password)
     {
-        new LoginPage().preencherNome(username);
-        new LoginPage().preencherSenha(password);
-        new LoginPage().clicarBtnLogin();
-        return new LoginPage().getMessageText();
+        loginPage = new LoginPage();
+        
+        loginPage.preencherNome(username);
+        loginPage.preencherSenha(password);
+        loginPage.clicarBtnLogin();
+        return loginPage.getMessageText();
     }
 }
