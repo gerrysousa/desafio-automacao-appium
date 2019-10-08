@@ -3,6 +3,9 @@ package base;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.remote.IOSMobileCapabilityType;
+import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Parameters;
@@ -60,8 +63,35 @@ public class DriverFactory {
             }
             else if (deviceType == "IOS")
             {
+                DesiredCapabilities caps = new DesiredCapabilities();
+                caps.setCapability("platformName", GlobalParameters.IOSPlatformName);
+                caps.setCapability("platformVersion", GlobalParameters.IOSPlatformVersion);
+                caps.setCapability("deviceName", GlobalParameters.IOSDeviceName);
+                caps.setCapability("app", GlobalParameters.IOSAppPath);
+                //caps.setCapability("browserName", GlobalParameters.AndroidBrowserName);
+                //caps.setCapability("udid", GlobalParameters.AndroidUDID);
+                caps.setCapability("noReset", GlobalParameters.IOSNoReset);
+                caps.setCapability("fullReset", GlobalParameters.IOSFullReset);
+                //caps.setCapability("orientation", GlobalParameters.AndroidOrientation);
+                caps.setCapability("automationName", GlobalParameters.IOSAutomationName);
+                driver = new AndroidDriver(new URL(GlobalParameters.AppiumServer), caps);
+
+
+//                DesiredCapabilities caps = new DesiredCapabilities();
+
+//                caps.setCapability(IOSMobileCapabilityType.BUNDLE_ID, ReadConfig.getProperty("IOSBundleId"));
+ //               caps.setCapability(MobileCapabilityType.UDID, ReadConfig.getProperty("IOSUDID"));
+               // caps.setCapability("reportFormat", ReadConfig.getProperty("IOSReportFormat"));
+               // caps.setCapability("testName", ReadConfig.getProperty("IOSTestName"));
+               // caps.setCapability("reportDirectory", path+"\\target\\reports");
+               // caps.setCapability(IOSMobileCapabilityType.SEND_KEY_STRATEGY, ReadConfig.getProperty("IOSSendKeyStrategy"));
+
+                //driver = new IOSDriver<>(new URL("http://localhost:4723/wd/hub"), caps);*/
+
+
             }
             //return driver;
+
         }
         catch (Exception e)
         {
@@ -81,6 +111,7 @@ public class DriverFactory {
                 driver = new AndroidDriver(new URL(GlobalParameters.TestObjectURL), caps);
             }
             else if (deviceType == "IOS") {
+
             }
 
         }

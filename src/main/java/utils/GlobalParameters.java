@@ -41,6 +41,24 @@ public class GlobalParameters {
     public static String AndroidOrientation;
     public static String PathProject = System.getProperty("user.dir");
 
+
+
+
+    public static String IOSUDID;
+    public static String IOSPlatformName;
+    public static String IOSPlatformVersion;
+    //public static String IOSBundleId;
+    public static String IOSReportFormat;
+    public static String IOSTestName;
+
+    public static String IOSNoReset;
+    public static String IOSFullReset;
+    public static String IOSSendKeyStrategy;
+    public static String IOSAutomationName;
+    public static String IOSDeviceName;
+    public static String IOSAppPath;
+
+
     public static String TestObjectApiKey;
     public static String TestObjectURL;
 
@@ -92,5 +110,20 @@ public class GlobalParameters {
 
         TestObjectApiKey=properties.getProperty("TestObjectApiKey");
         TestObjectURL=properties.getProperty("TestObjectURL");
+
+
+        IOSUDID = properties.getProperty("IOSUDID");
+        IOSPlatformName = properties.getProperty("IOSPlatformName");
+        IOSPlatformVersion = properties.getProperty("IOSPlatformVersion");
+        //IOSBundleId= properties.getProperty("IOSBundleId");
+        IOSReportFormat= properties.getProperty("IOSReportFormat");
+        IOSTestName= properties.getProperty("IOSTestName");
+        IOSNoReset= properties.getProperty("IOSNoReset");
+        IOSFullReset= properties.getProperty("IOSFullReset");
+        IOSSendKeyStrategy= properties.getProperty("IOSSendKeyStrategy");
+        IOSAutomationName = properties.getProperty("IOSAutomationName");
+        IOSDeviceName=properties.getProperty("IOSDeviceName");
+        IOSAppPath = PathProject+"\\src\\main\\resources\\app\\ios\\"+properties.getProperty("IOSApp");
+
     }
 }
