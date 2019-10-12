@@ -26,7 +26,7 @@ import static utils.GlobalParameters.PathProject;
 //import static utils.Constantes.*;
 
 public class BaseTests {
-    private static String log4jConfigurationPath = PathProject+"\\output\\Reports";
+    private static String log4jConfigurationPath = PathProject+"/output/Reports";
     public static ExtentHtmlReporter relatorio; // =new ExtentHtmlReporter("./output/Reports/learn_automation2.html");
     public static ExtentReports reporter;// = new ExtentReports();
     public static ExtentTest log;
@@ -49,7 +49,7 @@ public class BaseTests {
         service = AppiumDriverLocalService.buildService(builder);
         service.start();
 
-        fileName = PathProject+"\\output\\Reports\\Relatorio_"+getDatayyyyMMdd()+"_"+getHorahhmm()+".html";
+        fileName = PathProject+"/output/Reports/Relatorio_"+getDatayyyyMMdd()+"_"+getHorahhmm()+".html";
         relatorio =new ExtentHtmlReporter(fileName);
         reporter = new ExtentReports();
         reporter.attachReporter(relatorio);
@@ -58,7 +58,7 @@ public class BaseTests {
 
     @BeforeMethod(alwaysRun = true)
     @Parameters({ "OS", "environment" })
-    public void beforeMethod(@Optional("Android") String deviceType, @Optional("local") String environment, Method method, ITestContext context) {
+    public void beforeMethod(@Optional("IOS") String deviceType, @Optional("local") String environment, Method method, ITestContext context) {
         // Create Driver
         DriverFactory factory = new DriverFactory(deviceType, environment);
         if (environment.equals("deviceFarm")) {
