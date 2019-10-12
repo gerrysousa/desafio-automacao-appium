@@ -3,22 +3,23 @@ package pages;
 import base.BasePage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class MenuPage extends BasePage {
     //Mapeamento
-    //@iOSFindBy(accessibility= "Username Input Field")
+    @iOSFindBy(accessibility= "Login")
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Login Page']")
     private MobileElement btnLoginPage;
 
-    //@iOSFindBy(accessibility= "Username Input Field")
+    @iOSFindBy(accessibility= "Inputs")
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Input Controls']")
     private MobileElement btnInputControls;
 
-    //@iOSFindBy(accessibility= "Username Input Field")
+    @iOSFindBy(accessibility= "Nested")
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Nested Views']")
     private MobileElement btnNestedViews;
 
-    //@iOSFindBy(accessibility= "Username Input Field")
+    @iOSFindBy(accessibility= "Web")
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Local Web View']")
     private MobileElement btnLocalWebView;
 
@@ -26,11 +27,11 @@ public class MenuPage extends BasePage {
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/drawerList")
     private MobileElement menuLista;
 
-    //@iOSFindBy(accessibility= "Username Input Field")
+    @iOSFindBy(accessibility= "Alerts")
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Alerts']")
     private MobileElement btnAlertsDialogsPage;
 
-    //@iOSFindBy(accessibility= "Username Input Field")
+    @iOSFindBy(accessibility= "Native")
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Native Components']")
     private MobileElement btnNativeComponentsPage;
 

@@ -7,15 +7,15 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class LoginPage extends BasePage
 {
-    @iOSFindBy(accessibility= "Username Input Field")
+    @iOSFindBy(xpath= "//XCUIElementTypeApplication[@name='AWSDeviceFarmiOSReferenceApp']/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTextField")
     @AndroidFindBy(accessibility= "Username Input Field")
     private MobileElement usernameField;
 
-    @iOSFindBy(accessibility = "Password Input Field")
+    @iOSFindBy(xpath = "//XCUIElementTypeApplication[@name=\"AWSDeviceFarmiOSReferenceApp\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeSecureTextField\n")
     @AndroidFindBy(accessibility = "Password Input Field")
     private MobileElement passwordField;
 
-    @iOSFindBy(accessibility = "Login Button")
+    @iOSFindBy(accessibility = "Login")
     @AndroidFindBy(accessibility = "Login Button")
     private MobileElement loginBtn;
 

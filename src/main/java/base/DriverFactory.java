@@ -6,6 +6,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.IOSMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Parameters;
@@ -61,20 +62,23 @@ public class DriverFactory {
                 caps.setCapability("automationName", GlobalParameters.AppiumAutomationName);
                 driver = new AndroidDriver(new URL(GlobalParameters.AppiumServer), caps);
             }
-            else if (deviceType == "IOS")
+            else if (deviceType.equals("IOS"))
             {
                 DesiredCapabilities caps = new DesiredCapabilities();
                 caps.setCapability("platformName", GlobalParameters.IOSPlatformName);
                 caps.setCapability("platformVersion", GlobalParameters.IOSPlatformVersion);
                 caps.setCapability("deviceName", GlobalParameters.IOSDeviceName);
-                caps.setCapability("app", GlobalParameters.IOSAppPath);
-                //caps.setCapability("browserName", GlobalParameters.AndroidBrowserName);
-                //caps.setCapability("udid", GlobalParameters.AndroidUDID);
-                caps.setCapability("noReset", GlobalParameters.IOSNoReset);
-                caps.setCapability("fullReset", GlobalParameters.IOSFullReset);
-                //caps.setCapability("orientation", GlobalParameters.AndroidOrientation);
                 caps.setCapability("automationName", GlobalParameters.IOSAutomationName);
-                driver = new AndroidDriver(new URL(GlobalParameters.AppiumServer), caps);
+                caps.setCapability("bundleId", GlobalParameters.IOSBundleId);
+
+                //caps.setCapability(CapabilityType.BROWSER_NAME, "safari");
+                //caps.setCapability("app", GlobalParameters.IOSAppPath);
+            //    caps.setCapability("noReset", GlobalParameters.IOSNoReset);
+            //    caps.setCapability("fullReset", GlobalParameters.IOSFullReset);
+
+                //caps.setCapability("orientation", GlobalParameters.AndroidOrientation);
+
+                driver = new IOSDriver(new URL(GlobalParameters.AppiumServer), caps);
 
 
 //                DesiredCapabilities caps = new DesiredCapabilities();

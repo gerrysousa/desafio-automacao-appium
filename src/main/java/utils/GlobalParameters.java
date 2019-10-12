@@ -57,6 +57,7 @@ public class GlobalParameters {
     public static String IOSAutomationName;
     public static String IOSDeviceName;
     public static String IOSAppPath;
+    public static String IOSBundleId;
 
 
     public static String TestObjectApiKey;
@@ -115,7 +116,7 @@ public class GlobalParameters {
         IOSUDID = properties.getProperty("IOSUDID");
         IOSPlatformName = properties.getProperty("IOSPlatformName");
         IOSPlatformVersion = properties.getProperty("IOSPlatformVersion");
-        //IOSBundleId= properties.getProperty("IOSBundleId");
+        IOSBundleId= properties.getProperty("IOSBundleId");
         IOSReportFormat= properties.getProperty("IOSReportFormat");
         IOSTestName= properties.getProperty("IOSTestName");
         IOSNoReset= properties.getProperty("IOSNoReset");
