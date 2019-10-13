@@ -6,7 +6,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class InputControlsTextFieldPage extends BasePage {
-    @iOSFindBy(xpath = "//android.widget.TextView[@text='Login Page']")
+    @iOSFindBy(xpath = "//XCUIElementTypeTextView")
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/input_edit_text")
     private MobileElement txtCampoTexto;
 
