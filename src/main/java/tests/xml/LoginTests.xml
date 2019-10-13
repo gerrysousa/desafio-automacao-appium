@@ -6,7 +6,7 @@
     <test name="Testes no login na DeviceFarm">
         <parameter name="OS" value="IOS"></parameter>
         <classes>
-            <class name="tests.LoginTests"></class>
+            <class name="tests.iOSTests.LoginTests"></class>
         </classes>
     </test>
 </suite>

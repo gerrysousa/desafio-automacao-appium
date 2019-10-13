@@ -7,11 +7,11 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class LoginPage extends BasePage
 {
-    @iOSFindBy(xpath= "//XCUIElementTypeApplication[@name='AWSDeviceFarmiOSReferenceApp']/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTextField")
+    @iOSFindBy(xpath= "//XCUIElementTypeTextField[@value='Username']")//XCUIElementTypeButton[@name='More']
     @AndroidFindBy(accessibility= "Username Input Field")
     private MobileElement usernameField;
 
-    @iOSFindBy(xpath = "//XCUIElementTypeApplication[@name='AWSDeviceFarmiOSReferenceApp']/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeSecureTextField")
+    @iOSFindBy(xpath = "//XCUIElementTypeSecureTextField[@value='Password']")
     @AndroidFindBy(accessibility = "Password Input Field")
     private MobileElement passwordField;
 
@@ -19,7 +19,7 @@ public class LoginPage extends BasePage
     @AndroidFindBy(accessibility = "Login Button")
     private MobileElement loginBtn;
 
-    @iOSFindBy(accessibility = "Alt Message")
+    @iOSFindBy(xpath = "(//XCUIElementTypeStaticText)[1]")
     @AndroidFindBy(accessibility = "Alt Message")
     private MobileElement message;
 
