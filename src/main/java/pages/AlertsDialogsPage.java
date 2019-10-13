@@ -6,22 +6,25 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class AlertsDialogsPage extends BasePage {
-    @iOSFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/notifications_toast_button")
+    @iOSFindBy(accessibility = "Modal")
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/notifications_toast_button")
     private MobileElement btnToast;
 
-    @iOSFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/notifications_alert_button")
+    @iOSFindBy(accessibility = "Alert")
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/notifications_alert_button")
     private MobileElement btnAlert;
 
-    @iOSFindBy(id = "android:id/message")
+    @iOSFindBy(xpath = "//XCUIElementTypeStaticText[@name='This is an alert']")
     @AndroidFindBy(id = "android:id/message")
     private MobileElement lblMensagemAlerta;
 
-    @iOSFindBy(id = "android:id/button1")
+    @iOSFindBy(accessibility = "OK")
     @AndroidFindBy(id = "android:id/button1")
     private MobileElement btnAlertaOK;
 
+    //XCUIElementTypeStaticText[@name="This is a modal view"]
+    @iOSFindBy(accessibility = "This is a modal view")
+    private MobileElement lblMensagemAlertaModal;
 
     public void clicarBtnToast()
     {
@@ -43,4 +46,11 @@ public class AlertsDialogsPage extends BasePage {
         String texto = obterTexto(lblMensagemAlerta);
         return texto;
     }
+
+    public String obterMensagemDoModal()
+    {
+        String texto = obterTexto(lblMensagemAlertaModal);
+        return texto;
+    }
+
 }
