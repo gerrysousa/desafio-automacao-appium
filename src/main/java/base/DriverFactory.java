@@ -69,15 +69,15 @@ public class DriverFactory {
                 caps.setCapability("platformVersion", GlobalParameters.IOSPlatformVersion);
                 caps.setCapability("deviceName", GlobalParameters.IOSDeviceName);
                 caps.setCapability("automationName", GlobalParameters.IOSAutomationName);
-                caps.setCapability("bundleId", GlobalParameters.IOSBundleId);
+                //caps.setCapability("bundleId", GlobalParameters.IOSBundleId);
                 caps.setCapability("app", GlobalParameters.IOSAppPath);
-              //  caps.setCapability("udid", GlobalParameters.IOSUDID);
+                //caps.setCapability("udid", GlobalParameters.IOSUDID);
                 //caps.setCapability(CapabilityType.BROWSER_NAME, "safari");
             //    caps.setCapability("noReset", GlobalParameters.IOSNoReset);
             //    caps.setCapability("fullReset", GlobalParameters.IOSFullReset);
 
-                driver = new IOSDriver(new URL("http://0.0.0.0:4723/wd/hub"), caps);
-                //driver = new IOSDriver(new URL(GlobalParameters.AppiumServer), caps);
+                //driver = new IOSDriver(new URL("http://0.0.0.0:4723/wd/hub"), caps);
+                driver = new IOSDriver(new URL(GlobalParameters.AppiumServer), caps);
 
 
 
