@@ -11,7 +11,7 @@ public class LoginPage extends BasePage
     @AndroidFindBy(accessibility= "Username Input Field")
     private MobileElement usernameField;
 
-    @iOSFindBy(xpath = "//XCUIElementTypeApplication[@name=\"AWSDeviceFarmiOSReferenceApp\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeSecureTextField\n")
+    @iOSFindBy(xpath = "//XCUIElementTypeApplication[@name='AWSDeviceFarmiOSReferenceApp']/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeSecureTextField")
     @AndroidFindBy(accessibility = "Password Input Field")
     private MobileElement passwordField;
 

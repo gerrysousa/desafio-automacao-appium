@@ -70,31 +70,18 @@ public class DriverFactory {
                 caps.setCapability("deviceName", GlobalParameters.IOSDeviceName);
                 caps.setCapability("automationName", GlobalParameters.IOSAutomationName);
                 caps.setCapability("bundleId", GlobalParameters.IOSBundleId);
-
+                caps.setCapability("app", GlobalParameters.IOSAppPath);
+              //  caps.setCapability("udid", GlobalParameters.IOSUDID);
                 //caps.setCapability(CapabilityType.BROWSER_NAME, "safari");
-                //caps.setCapability("app", GlobalParameters.IOSAppPath);
             //    caps.setCapability("noReset", GlobalParameters.IOSNoReset);
             //    caps.setCapability("fullReset", GlobalParameters.IOSFullReset);
 
-                //caps.setCapability("orientation", GlobalParameters.AndroidOrientation);
+                driver = new IOSDriver(new URL("http://0.0.0.0:4723/wd/hub"), caps);
+                //driver = new IOSDriver(new URL(GlobalParameters.AppiumServer), caps);
 
-                driver = new IOSDriver(new URL(GlobalParameters.AppiumServer), caps);
-
-
-//                DesiredCapabilities caps = new DesiredCapabilities();
-
-//                caps.setCapability(IOSMobileCapabilityType.BUNDLE_ID, ReadConfig.getProperty("IOSBundleId"));
- //               caps.setCapability(MobileCapabilityType.UDID, ReadConfig.getProperty("IOSUDID"));
-               // caps.setCapability("reportFormat", ReadConfig.getProperty("IOSReportFormat"));
-               // caps.setCapability("testName", ReadConfig.getProperty("IOSTestName"));
-               // caps.setCapability("reportDirectory", path+"\\target\\reports");
-               // caps.setCapability(IOSMobileCapabilityType.SEND_KEY_STRATEGY, ReadConfig.getProperty("IOSSendKeyStrategy"));
-
-                //driver = new IOSDriver<>(new URL("http://localhost:4723/wd/hub"), caps);*/
 
 
             }
-            //return driver;
 
         }
         catch (Exception e)
