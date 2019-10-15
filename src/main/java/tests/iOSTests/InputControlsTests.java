@@ -62,7 +62,7 @@ public class InputControlsTests extends BaseTests {
        String radioMarcadoFinal = inputControlsRadioButtonsPage.obterRadioButtonMarcado();
        Assert.assertEquals(radioMarcadoFinal, "Services");
    }
-*/
+
     @Test(priority = 1, description = "Teste para manipular campo Toggle buttons")
     public void Test_ManipularCampoToggleButtons() {
         inputControlsSteps = new InputControlsSteps();
@@ -127,5 +127,5 @@ public class InputControlsTests extends BaseTests {
         String textoFinal = inputControlsGesturesPage.obterTextoLblDisplayGestosExecutados();
         Assert.assertTrue(textoFinal.contains(resultado));
     }
-
+*/
 }

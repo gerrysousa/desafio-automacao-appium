@@ -39,6 +39,10 @@ public class MenuPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Fixtures']")
     private MobileElement btnFixturesPage;
 
+    @iOSFindBy(accessibility= "HTTP")
+    @AndroidFindBy(xpath = "xxxxxxxx")
+    private MobileElement btnHttp;
+
     //Fim Mapeamento
     //Ações
     public void clicarBtnLoginPage()
@@ -75,5 +79,9 @@ public class MenuPage extends BasePage {
     public void clicarBtnFixturesPage() {
         excutarScrowDownMenuLista();
         clicar(btnFixturesPage);
+    }
+
+    public void clicarBtnHttp() {
+        clicar(btnHttp);
     }
 }
