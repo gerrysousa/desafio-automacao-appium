@@ -7,21 +7,38 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class InputControlsToggleButtonPage extends BasePage {
 
-    @iOSFindBy(xpath = "//android.widget.TextView[@text='Login Page']")
+    @iOSFindBy(xpath = "//XCUIElementTypeSwitch")
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/input_switch")
     private MobileElement btnSwitch;
 
-    @iOSFindBy(xpath = "//android.widget.TextView[@text='Login Page']")
+    @iOSFindBy(xpath = "//XCUIElementTypeTextView")
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/input_switch_display")
     private MobileElement lblStatusSwitch;
+
+    @iOSFindBy(xpath = "//XCUIElementTypeTextView")
+    private MobileElement valorToggle;
 
     public void clicarBtnSwitch()
     {
         clicar(btnSwitch);
     }
 
-    public String obterStatusSwitch() {
-        String aux = obterDescricaoDoElemento(lblStatusSwitch);
+    public String obterStatusSwitch()
+    {
+        if (driver.getCapabilities().getCapability("platformName").toString().equals("Android"))
+        {
+            String aux = obterDescricaoDoElemento(lblStatusSwitch);
+            return aux;
+        }
+        else {
+            String aux = obterValor(lblStatusSwitch);
+            return aux;
+        }
+    }
+
+    public String obterStatusToggleIos()
+    {
+        String aux = obterValor(valorToggle);
         return aux;
     }
 }

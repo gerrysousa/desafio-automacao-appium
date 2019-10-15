@@ -317,19 +317,32 @@ public class BasePage {
                 .moveTo(PointOption.point(x,end_y)).release().perform();
     }
 
-//    public void SwipeElement(MobileElement elemento, double inicio, double fim) {
+    public void swipeElement(MobileElement elemento, double inicio, double fim) {
 //        int y= elemento.getLocation().y + (elemento.getSize().height / 2);
 //
 //        int start_x =(int) (elemento.getSize().width* inicio);
 //        int end_x =(int) (elemento.getSize().width* fim);
 //
-//        new TouchAction(getDriver())
-//                .press(start_x, y)
-//                .waitAction(Duration.ofMillis(500))
-//                .moveTo(end_x, y)
-//                .release()
-//                .perform()
-//    }
+//        TouchAction actions = new TouchAction(getDriver());
+//        actions.press(PointOption.point(start_x, y))
+//                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
+//                .moveTo(PointOption.point(end_x, y)).release().perform();
+
+        Dimension teste;
+        teste = elemento.getSize();
+
+        Dimension size = elemento.getSize();
+        int y= elemento.getLocation().y + (elemento.getSize().height / 2);
+
+        int start_x =(int) (elemento.getSize().width* inicio);
+        int end_x =(int) (elemento.getSize().width* fim);
+
+        TouchAction actions = new TouchAction(getDriver());
+        actions.press(PointOption.point(start_x, y))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
+                .moveTo(PointOption.point(end_x, y)).release().perform();
+
+    }
 }
 
 //    public void escrever(WebElement element, String texto) {

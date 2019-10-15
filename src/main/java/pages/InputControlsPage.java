@@ -48,6 +48,11 @@ public class InputControlsPage extends BasePage {
     private MobileElement pageGestures;
 
 
+
+    //@iOSFindBy(xpath= "(//XCUIElementTypeOther)[1]")
+    @iOSFindBy(xpath= "//XCUIElementTypePageIndicator")
+    private MobileElement elementoGenerico;
+
     public void acessarInputControlsTextFieldPage() {
         clicar(pageTextField);
     }
@@ -63,8 +68,19 @@ public class InputControlsPage extends BasePage {
     }
 
     public void acessarInputControlsToggleButtonPage() {
-        acessarInputControlsRadioButtonsPage();
-        clicar(pageToggleButton);
+        if (driver.getCapabilities().getCapability("platformName").toString().equals("Android")) {
+            acessarInputControlsRadioButtonsPage();
+            clicar(pageToggleButton);
+        }
+        else if (driver.getCapabilities().getCapability("platformName").toString().equals("iOS"))
+        {
+            for (int i=0;i<5;i++)
+            {
+                swipe(0.9,0.1);
+                //swipeElement(elementoGenerico, 0.9, 0.1);
+            }
+        }
+
     }
 
     public void acessarInputControlsSpinnerPage() {

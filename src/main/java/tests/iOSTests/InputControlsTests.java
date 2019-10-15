@@ -34,34 +34,35 @@ public class InputControlsTests extends BaseTests {
         Assert.assertEquals(textoEsperado, inputControlsTextFieldPage.obterTextoDoElementoCampoTexto());
     }
 
-    @Test(priority = 1, description = "Teste para manipular campo Checkbox")
-    public void Test_ManipularCampoCheckBox() {
-        inputControlsSteps = new InputControlsSteps();
-        inputControlsCheckboxPage = new  InputControlsCheckboxPage();
+    /*@Test(priority = 1, description = "Teste para manipular campo Checkbox")
+   public void Test_ManipularCampoCheckBox() {
+       inputControlsSteps = new InputControlsSteps();
+       inputControlsCheckboxPage = new  InputControlsCheckboxPage();
 
-        inputControlsSteps.AcessarInputControlsCheckbox();
-        String statusInicial = inputControlsCheckboxPage.obterStatusCheckbox();
-        Assert.assertEquals(statusInicial, "Unchecked");
+       inputControlsSteps.AcessarInputControlsCheckbox();
+       String statusInicial = inputControlsCheckboxPage.obterStatusCheckbox();
+       Assert.assertEquals(statusInicial, "Unchecked");
 
-        inputControlsCheckboxPage.clicarCkbCheckbox();
-        String statusFinal = inputControlsCheckboxPage.obterStatusCheckbox();
-        Assert.assertEquals(statusFinal, "Checked");
-    }
+       inputControlsCheckboxPage.clicarCkbCheckbox();
+       String statusFinal = inputControlsCheckboxPage.obterStatusCheckbox();
+       Assert.assertEquals(statusFinal, "Checked");
+   }
 
-    @Test(priority = 1, description = "Teste para manipular campo Radio buttons")
-    public void Test_ManipularCampoRadioButtons() {
-        inputControlsSteps = new InputControlsSteps();
-        inputControlsRadioButtonsPage = new  InputControlsRadioButtonsPage();
 
-        inputControlsSteps.AcessarInputControlsRadioButtons();
-        String radioMarcadoInicial = inputControlsRadioButtonsPage.obterRadioButtonMarcado();
-        Assert.assertEquals(radioMarcadoInicial, "Amazon");
+   @Test(priority = 1, description = "Teste para manipular campo Radio buttons")
+   public void Test_ManipularCampoRadioButtons() {
+       inputControlsSteps = new InputControlsSteps();
+       inputControlsRadioButtonsPage = new  InputControlsRadioButtonsPage();
 
-        inputControlsRadioButtonsPage.clicarRdbService();
-        String radioMarcadoFinal = inputControlsRadioButtonsPage.obterRadioButtonMarcado();
-        Assert.assertEquals(radioMarcadoFinal, "Services");
-    }
+       inputControlsSteps.AcessarInputControlsRadioButtons();
+       String radioMarcadoInicial = inputControlsRadioButtonsPage.obterRadioButtonMarcado();
+       Assert.assertEquals(radioMarcadoInicial, "Amazon");
 
+       inputControlsRadioButtonsPage.clicarRdbService();
+       String radioMarcadoFinal = inputControlsRadioButtonsPage.obterRadioButtonMarcado();
+       Assert.assertEquals(radioMarcadoFinal, "Services");
+   }
+*/
     @Test(priority = 1, description = "Teste para manipular campo Toggle buttons")
     public void Test_ManipularCampoToggleButtons() {
         inputControlsSteps = new InputControlsSteps();
@@ -69,11 +70,11 @@ public class InputControlsTests extends BaseTests {
 
         inputControlsSteps.AcessarInputControlsToggleButton();
         String toggleInicial = inputControlsToggleButtonPage.obterStatusSwitch();
-        Assert.assertEquals(toggleInicial, "OFF");
+        Assert.assertEquals(toggleInicial, "0");
 
         inputControlsToggleButtonPage.clicarBtnSwitch();
         String toggleFinal = inputControlsToggleButtonPage.obterStatusSwitch();
-        Assert.assertEquals(toggleFinal, "ON");
+        Assert.assertEquals(toggleFinal, "1");
     }
 
     @Test(priority = 1, description = "Teste para manipular campo Spinner")
