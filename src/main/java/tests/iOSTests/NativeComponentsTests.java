@@ -35,7 +35,7 @@ public class NativeComponentsTests extends BaseTests {
         Assert.assertEquals(teste2, textoTituloImagemColletion);
     }
 
-    /*
+
     @Test(priority = 1, description = "Teste para acessar Content Scrolling")
     public void Test_AcessarContentScrolling() {
         nativeComponentsSteps = new NativeComponentsSteps();
@@ -43,13 +43,13 @@ public class NativeComponentsTests extends BaseTests {
 
         nativeComponentsSteps.acessarContentScrollingPage();
 
-        String textoTituloImagemColletion = "Content Scrolling";
+        String textoTituloImagemColletion = "Scrolling View";
         String teste2 = nativeComponentsContentScrollingPage.obterTextoTitulo();
         nativeComponentsContentScrollingPage.tirarScreenShotDaTela();
 
         Assert.assertEquals(teste2, textoTituloImagemColletion);
     }
-
+/*
     @Test(priority = 1, description = "Teste para acessar Video Player")
     public void Test_AcessarVideoPlayer() {
         nativeComponentsSteps = new NativeComponentsSteps();

@@ -6,7 +6,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class NativeComponentsContentScrollingPage extends BasePage {
-    @iOSFindBy(xpath= "//android.widget.TextView[@text='Content Scrolling']")
+    @iOSFindBy(xpath= "//XCUIElementTypeOther[@name='Scrolling View']")
     @AndroidFindBy(xpath= "//android.widget.TextView[@text='Content Scrolling']")
     private MobileElement lblTitulo;
 
