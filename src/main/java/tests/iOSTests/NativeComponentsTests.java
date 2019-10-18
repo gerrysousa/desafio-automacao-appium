@@ -15,7 +15,7 @@ public class NativeComponentsTests extends BaseTests {
     NativeComponentsVideoPlayerPage nativeComponentsVideoPlayerPage;
     NativeComponentsCameraPage nativeComponentsCameraPage;
     NativeComponentsContentOutOfViewPage nativeComponentsContentOutOfViewPage;
-
+    NativeComponentsTableOfElementsPage nativeComponentsTableOfElementsPage;
 
     @Test(priority = 1, description = "Teste para acessar Image Collection")
     public void Test_AcessarImageCollection() {
@@ -77,6 +77,22 @@ public class NativeComponentsTests extends BaseTests {
 
         //Assert.assertEquals(teste2, textoTituloImagemColletion);
     }
+
+    @Test(priority = 1, description = "Teste para acessar Tabuleiro de elementos")
+    public void Test_AcessarTableOfElements() {
+        nativeComponentsSteps = new NativeComponentsSteps();
+        nativeComponentsTableOfElementsPage = new NativeComponentsTableOfElementsPage();
+
+        nativeComponentsSteps.acessarTableOfElementsPage();
+
+        String textoEsperado = "1";
+        String teste2 = nativeComponentsTableOfElementsPage.obterTextoLinha1();
+        nativeComponentsTableOfElementsPage.tirarScreenShotDaTela();
+
+        Assert.assertEquals(teste2, textoEsperado);
+    }
+
+
 /*
     @Test(priority = 1, description = "Teste para acessar Content Out of View")
     public void Test_AcessarContentOutOfView() {

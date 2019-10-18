@@ -30,6 +30,10 @@ public class NativeComponentsPage extends BasePage {
     @AndroidFindBy(xpath= "//android.widget.TextView[@text='Content Out of View']")
     private MobileElement pageContentOutofView;
 
+    @iOSFindBy(accessibility= "Table of elements")
+    private MobileElement pageTableOfElements;
+
+
 
     //Açoes
     public void acessarImageCollectionPage() {
@@ -98,5 +102,8 @@ public class NativeComponentsPage extends BasePage {
         return texto;
     }
 
+    public void acessarpageTableOfElements() {
+        clicar(pageTableOfElements);
+    }
 
 }

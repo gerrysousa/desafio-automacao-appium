@@ -43,4 +43,11 @@ public class NativeComponentsSteps extends BasePage {
         menuPage.clicarBtnNativeComponentsPage();
         nativeComponentsPage.acessarContentOutofViewPage();
     }
+
+    public void acessarTableOfElementsPage()
+    {
+        homePage.clicarBtnMenu();
+        menuPage.clicarBtnNativeComponentsPage();
+        nativeComponentsPage.acessarpageTableOfElements();
+    }
 }
