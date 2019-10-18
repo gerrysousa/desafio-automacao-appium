@@ -37,12 +37,29 @@ public class NativeComponentsPage extends BasePage {
     }
 
     public void acessarContentScrollingPage() {
-        acessarImageCollectionPage();
+        if (driver.getCapabilities().getCapability("platformName").toString().equals("Android")) {
+            // codigo para android
+            acessarImageCollectionPage();
+
+        }
+        else if (driver.getCapabilities().getCapability("platformName").toString().equals("iOS"))
+        {
+            //codigo para iOS
+        }
+
         clicar(pageContentScrolling);
     }
 
     public void acessarVideoPlayerPage() {
-        acessarContentScrollingPage();
+        if (driver.getCapabilities().getCapability("platformName").toString().equals("Android")) {
+            // codigo para android
+            acessarContentScrollingPage();
+        }
+        else if (driver.getCapabilities().getCapability("platformName").toString().equals("iOS"))
+        {
+            //codigo para iOS
+        }
+
         clicar(pageVideoPlayer);
     }
 
