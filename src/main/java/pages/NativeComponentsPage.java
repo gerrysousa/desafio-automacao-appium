@@ -65,12 +65,26 @@ public class NativeComponentsPage extends BasePage {
 
 
     public void acessarCameraPage() {
-        acessarVideoPlayerPage();
+        if (driver.getCapabilities().getCapability("platformName").toString().equals("Android")) {
+            // codigo para android
+            acessarVideoPlayerPage();
+        }
+        else if (driver.getCapabilities().getCapability("platformName").toString().equals("iOS"))
+        {
+            //codigo para iOS
+        }
         clicar(pageCamera);
     }
 
     public void acessarContentOutofViewPage() {
-        acessarCameraPage();
+        if (driver.getCapabilities().getCapability("platformName").toString().equals("Android")) {
+            // codigo para android
+            acessarCameraPage();
+        }
+        else if (driver.getCapabilities().getCapability("platformName").toString().equals("iOS"))
+        {
+            //codigo para iOS
+        }
         clicar(pageContentOutofView);
     }
 

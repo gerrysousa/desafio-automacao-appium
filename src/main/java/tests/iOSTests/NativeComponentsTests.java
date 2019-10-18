@@ -63,7 +63,7 @@ public class NativeComponentsTests extends BaseTests {
 
         //Assert.assertEquals(teste2, textoTituloImagemColletion);
     }
-/*
+
     @Test(priority = 1, description = "Teste para acessar Camera")
     public void Test_AcessarCamera() {
         nativeComponentsSteps = new NativeComponentsSteps();
@@ -72,12 +72,12 @@ public class NativeComponentsTests extends BaseTests {
         nativeComponentsSteps.acessarCameraPage();
 
         String textoTituloImagemColletion = "Camera";
-        String teste2 = nativeComponentsCameraPage.obterTextoTitulo();
+        //String teste2 = nativeComponentsCameraPage.obterTextoTitulo();
         nativeComponentsCameraPage.tirarScreenShotDaTela();
 
-        Assert.assertEquals(teste2, textoTituloImagemColletion);
+        //Assert.assertEquals(teste2, textoTituloImagemColletion);
     }
-
+/*
     @Test(priority = 1, description = "Teste para acessar Content Out of View")
     public void Test_AcessarContentOutOfView() {
         nativeComponentsSteps = new NativeComponentsSteps();
@@ -85,10 +85,10 @@ public class NativeComponentsTests extends BaseTests {
 
         nativeComponentsSteps.acessarContentOutofViewPage();
 
-        String textoTituloImagemColletion = "Content Out of View";
-        String teste1 = nativeComponentsContentOutOfViewPage.obterTextoTitulo();
+        //String textoTituloImagemColletion = "Content Out of View";
+        //String teste1 = nativeComponentsContentOutOfViewPage.obterTextoTitulo();
         nativeComponentsContentOutOfViewPage.tirarScreenShotDaTela();
-        Assert.assertEquals(teste1, textoTituloImagemColletion);
+        //Assert.assertEquals(teste1, textoTituloImagemColletion);
 
         nativeComponentsContentOutOfViewPage.scrollUp();
         nativeComponentsContentOutOfViewPage.scrollUp();
