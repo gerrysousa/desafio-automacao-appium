@@ -21,6 +21,7 @@ public class LoginTests extends BaseTests {
 
         Assert.assertEquals(message, mensagemEsperada);
     }
+
     @Test (priority = 1, description = "teste de login invalido")
     public void Test_LoginInvalido() {
         loginSteps  = new LoginSteps();

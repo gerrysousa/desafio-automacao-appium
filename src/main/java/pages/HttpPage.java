@@ -7,7 +7,7 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class HttpPage extends BasePage {
 
-    @iOSFindBy(accessibility = "navigation bar")
+    @iOSFindBy(xpath = "//XCUIElementTypeTextField[@name='navigation bar']")
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/input_edit_text")
     private MobileElement txtCampoURL;
 
@@ -15,7 +15,7 @@ public class HttpPage extends BasePage {
     @AndroidFindBy(id = "xxxxxxxx")
     private MobileElement btnGo;
 
-    @iOSFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Faulty URL Entered\"]")
+    @iOSFindBy(xpath = "//XCUIElementTypeStaticText[@name='Faulty URL Entered']")
     @AndroidFindBy(id = "xxxxxxxx")
     private MobileElement lblAlerta;
 
@@ -34,5 +34,10 @@ public class HttpPage extends BasePage {
     public String obterTextoTituloDoAlerta() {
         String aux = obterTexto(lblAlerta);
         return aux;
+    }
+
+    public boolean verificarSeBotaoVoltarExiste() {
+        boolean existe = verificarSeExisteTextoNaPagina("Input a website");
+        return existe;
     }
 }
