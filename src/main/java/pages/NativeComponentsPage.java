@@ -6,27 +6,27 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class NativeComponentsPage extends BasePage {
-    @iOSFindBy(xpath= "com.amazonaws.devicefarm.android.referenceapp:id/toolbar_title")
+    @iOSFindBy(xpath= "//XCUIElementTypeNavigationBar")
     @AndroidFindBy(xpath= "com.amazonaws.devicefarm.android.referenceapp:id/toolbar_title")
     private MobileElement lblTitulo;
 
-    @iOSFindBy(accessibility= "//android.widget.TextView[@text='Image Collection]")
+    @iOSFindBy(accessibility= "Image Gallery")
     @AndroidFindBy(xpath= "//android.widget.TextView[@text='Image Collection']")
     private MobileElement pageImageCollection;
 
-    @iOSFindBy(accessibility= "//android.widget.TextView[@text='Content Scrolling']")
+    @iOSFindBy(accessibility= "Scrolling View")
     @AndroidFindBy(xpath= "//android.widget.TextView[@text='Content Scrolling']")
     private MobileElement pageContentScrolling;
 
-    @iOSFindBy(accessibility= "//android.widget.TextView[@text='Video Player']")
+    @iOSFindBy(accessibility= "Video Player")
     @AndroidFindBy(xpath= "//android.widget.TextView[@text='Video Player']")
     private MobileElement pageVideoPlayer;
 
-    @iOSFindBy(accessibility= "//android.widget.TextView[@text='Camera']")
+    @iOSFindBy(accessibility= "Camera")
     @AndroidFindBy(xpath= "//android.widget.TextView[@text='Camera']")
     private MobileElement pageCamera;
 
-    @iOSFindBy(accessibility= "//android.widget.TextView[@text='Content Out of View']")
+    @iOSFindBy(accessibility= "Out of View Component")
     @AndroidFindBy(xpath= "//android.widget.TextView[@text='Content Out of View']")
     private MobileElement pageContentOutofView;
 
@@ -62,6 +62,10 @@ public class NativeComponentsPage extends BasePage {
         return texto;
     }
 
+    public String obterNomeDoTitulo() {
+        String texto = obterValor(lblTitulo);
+        return texto;
+    }
 
 
 }
