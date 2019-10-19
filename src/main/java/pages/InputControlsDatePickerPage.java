@@ -5,6 +5,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSFindBy;
 import org.apache.commons.lang3.StringUtils;
+import utils.DataUtils;
 
 public class InputControlsDatePickerPage extends BasePage {
     //Mapeamento
@@ -24,14 +25,13 @@ public class InputControlsDatePickerPage extends BasePage {
     @AndroidFindBy(id= "android:id/prev")
     private MobileElement btnMesAnterior;
 
-    @iOSFindBy(xpath= "//XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther /XCUIElementTypeStaticText")
+    @iOSFindBy(xpath= "//XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeStaticText")
     @AndroidFindBy(id= "com.amazonaws.devicefarm.android.referenceapp:id/input_date_display")
     private MobileElement lblDataCompletaSelecionada;
 
     @iOSFindBy(id= "android:id/month_view")
     @AndroidFindBy(id= "android:id/month_view")
     private MobileElement gridCalendario;
-
 
 
 
@@ -59,34 +59,16 @@ public class InputControlsDatePickerPage extends BasePage {
 
     public String obterDataSelecionada() {
         String aux = obterTexto(lblDataCompletaSelecionada);
+        aux= DataUtils.converterDataAndroid(aux);
 
-        String [] dateParts = aux.split("/");
-        String mes = dateParts[0];
-        String dia = dateParts[1];
-        String ano = dateParts[2];
-        dia = StringUtils.leftPad(dia, 2, "0");
-        mes = StringUtils.leftPad(mes, 2, "0");
-
-        String texto = dia+"/"+mes+"/"+ano;
-        return texto;
+        return aux;
     }
 
     public String obterDataSelecionadaIos() {
-
         String aux = obterTexto(lblDataCompletaSelecionada);//Oct 10, 2019
+        aux= DataUtils.converterDataIos(aux);
 
-//        String [] dateParts = aux.split("/");
-//        String mes = dateParts[0];
-//        String dia = dateParts[1];
-//        String ano = dateParts[2];
-//        dia = StringUtils.leftPad(dia, 2, "0");
-//        mes = StringUtils.leftPad(mes, 2, "0");
-
-
-
-
-//        String texto = dia+"/"+mes+"/"+ano;
-        return texto;
+        return aux;
     }
 
 
