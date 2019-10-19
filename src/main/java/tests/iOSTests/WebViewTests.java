@@ -12,7 +12,7 @@ public class WebViewTests extends BaseTests {
     private MenuPage menuPage;
     WebViewPage webViewPage;
 
-    @Test(priority = 1, description = "Teste para manipular Alert")
+    @Test(priority = 1, description = "Teste para manipular webview ")
     public void Test_MensagemAlerta() {
         homePage = new HomePage();
         menuPage = new MenuPage();

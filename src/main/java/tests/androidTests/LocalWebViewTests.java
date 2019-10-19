@@ -1,4 +1,4 @@
-package tests;
+package tests.androidTests;
 
 import base.BaseTests;
 import org.testng.annotations.Test;
