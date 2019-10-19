@@ -1,9 +1,23 @@
 package utils.Steps;
 
 import base.BasePage;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.iOSFindBy;
 import pages.*;
 
 public class InputControlsDatePickerSteps extends BasePage {
+
+
+    @iOSFindBy(xpath= "//XCUIElementTypePickerWheel[1]")
+    private MobileElement lblMes;
+
+    @iOSFindBy(xpath= "//XCUIElementTypePickerWheel[2]")
+    private MobileElement lblDia;
+
+    @iOSFindBy(xpath= "//XCUIElementTypePickerWheel[3]")
+    private MobileElement lblAno;
+
 
     InputControlsDatePickerPage inputControlsDatePickerPage;
 
@@ -13,10 +27,21 @@ public class InputControlsDatePickerSteps extends BasePage {
         String mes = dateParts[1];
         String ano = dateParts[2];
 
+        if (driver.getCapabilities().getCapability("platformName").toString().equals("Android")) {
+            // codigo para android
+            escolherAno(ano);
+            escolherMes(mes);
+            escolherDia(dia);
+        }
+        else if (driver.getCapabilities().getCapability("platformName").toString().equals("iOS"))
+        {
+            //codigo para iOS
+            escolherAnoIos(ano);
+            escolherMesIos(mes);
+            escolherDiaIos(dia);
+        }
 
-        escolherAno(ano);
-        escolherMes(mes);
-        escolherDia(dia);
+
     }
 
     public void escolherAno(String ano) {
@@ -78,5 +103,41 @@ public class InputControlsDatePickerSteps extends BasePage {
     public void escolherDia(String dia) {
         inputControlsDatePickerPage = new InputControlsDatePickerPage();
         clicarPorTexto(dia);
+    }
+
+    public void escolherAnoIos(String ano) {
+        inputControlsDatePickerPage = new InputControlsDatePickerPage();
+        int i = 0;
+        int anoInt = Integer.parseInt(ano.trim());
+
+        while (!verificarSeExisteTextoNaPagina(ano)&&i<10) {
+            if((anoInt<2019))
+            {
+                scrollElement(lblAno,0.5,0.8);
+            }
+            else
+            {
+                scrollElement(lblAno,0.7,0.4);
+            }
+            i++;
+        }
+        clicarPorTexto(ano);
+    }
+
+
+
+    public void escolherDiaIos(String dia) {
+        while (!verificarSeExisteTextoNaPagina(dia)&&i<10) {
+            if((do<2019))
+            {
+                scrollElement(lblAno,0.5,0.8);
+            }
+            else
+            {
+                scrollElement(lblAno,0.7,0.4);
+            }
+            i++;
+        }
+        clicarPorTexto(ano);
     }
 }

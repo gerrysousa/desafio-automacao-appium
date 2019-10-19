@@ -108,8 +108,18 @@ public class InputControlsPage extends BasePage {
     }
 
     public void acessarInputControlsDatePickerPage() {
-        acessarInputControlsTimePickerPage();
-        clicar(pageDatePicker);
+        if (driver.getCapabilities().getCapability("platformName").toString().equals("Android")) {
+            acessarInputControlsTimePickerPage();
+            clicar(pageDatePicker);
+        }
+        else if (driver.getCapabilities().getCapability("platformName").toString().equals("iOS"))
+        {
+            for (int i=0;i<2;i++)
+            {
+                swipe(0.9,0.1);
+            }
+        }
+
     }
 
     public void acessarInputControlsSubmitButtonPage() {
@@ -124,7 +134,6 @@ public class InputControlsPage extends BasePage {
                 swipe(0.9,0.1);
             }
         }
-
     }
 
     public void acessarInputControlsGesturesPage() {
