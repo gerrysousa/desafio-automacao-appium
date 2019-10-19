@@ -15,7 +15,7 @@ public class InputControlsToggleButtonPage extends BasePage {
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/input_switch_display")
     private MobileElement lblStatusSwitch;
 
-    @iOSFindBy(xpath = "//XCUIElementTypeTextView")
+    @iOSFindBy(xpath = "//XCUIElementTypeSwitch")
     private MobileElement valorToggle;
 
     public void clicarBtnSwitch()
@@ -31,7 +31,7 @@ public class InputControlsToggleButtonPage extends BasePage {
             return aux;
         }
         else {
-            String aux = obterValor(lblStatusSwitch);
+            String aux = obterTexto(lblStatusSwitch);
             return aux;
         }
     }

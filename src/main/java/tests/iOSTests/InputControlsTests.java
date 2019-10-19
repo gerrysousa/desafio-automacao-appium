@@ -20,6 +20,7 @@ public class InputControlsTests extends BaseTests {
     InputControlsPushToRefreshPage inputControlsPushToRefreshPage;
     InputControlsSubmitButtonPage inputControlsSubmitButtonPage;
     InputControlsGesturesPage inputControlsGesturesPage;
+    InputControlsCampoInformacaoPage inputControlsCampoInformacaoPage;
 
     @Test(priority = 1, description = "Teste para manipular campo Text Tield")
     public void Test_ManipularCampoTextField() {
@@ -34,21 +35,33 @@ public class InputControlsTests extends BaseTests {
         Assert.assertEquals(textoEsperado, inputControlsTextFieldPage.obterTextoDoElementoCampoTexto());
     }
 
-    /*@Test(priority = 1, description = "Teste para manipular campo Checkbox")
-   public void Test_ManipularCampoCheckBox() {
+    @Test(priority = 1, description = "Teste para manipular campo Toggle buttons")
+    public void Test_ManipularCampoToggleButtons() {
+        inputControlsSteps = new InputControlsSteps();
+        inputControlsToggleButtonPage = new  InputControlsToggleButtonPage();
+
+        inputControlsSteps.AcessarInputControlsToggleButton();
+        String toggleInicial = inputControlsToggleButtonPage.obterStatusSwitch();
+        Assert.assertEquals(toggleInicial, "0");
+
+        inputControlsToggleButtonPage.clicarBtnSwitch();
+        String toggleFinal = inputControlsToggleButtonPage.obterStatusSwitch();
+        Assert.assertEquals(toggleFinal, "1");
+    }
+
+
+    @Test(priority = 1, description = "Teste para manipular campo informacao")
+    public void Test_ManipularCampoInformacao() {
        inputControlsSteps = new InputControlsSteps();
-       inputControlsCheckboxPage = new  InputControlsCheckboxPage();
+       inputControlsCampoInformacaoPage = new InputControlsCampoInformacaoPage();
 
-       inputControlsSteps.AcessarInputControlsCheckbox();
-       String statusInicial = inputControlsCheckboxPage.obterStatusCheckbox();
-       Assert.assertEquals(statusInicial, "Unchecked");
+       inputControlsSteps.AcessarInputControlsBotaoMaisInformacao();
+       inputControlsCampoInformacaoPage.clicarBtnMaisInformacao();
+       String statusFinal = inputControlsCampoInformacaoPage.obterTextoBtnMaisInformacao();
+       Assert.assertEquals(statusFinal, "true");
+    }
 
-       inputControlsCheckboxPage.clicarCkbCheckbox();
-       String statusFinal = inputControlsCheckboxPage.obterStatusCheckbox();
-       Assert.assertEquals(statusFinal, "Checked");
-   }
-
-
+ /*
    @Test(priority = 1, description = "Teste para manipular campo Radio buttons")
    public void Test_ManipularCampoRadioButtons() {
        inputControlsSteps = new InputControlsSteps();
@@ -63,19 +76,7 @@ public class InputControlsTests extends BaseTests {
        Assert.assertEquals(radioMarcadoFinal, "Services");
    }
 
-    @Test(priority = 1, description = "Teste para manipular campo Toggle buttons")
-    public void Test_ManipularCampoToggleButtons() {
-        inputControlsSteps = new InputControlsSteps();
-        inputControlsToggleButtonPage = new  InputControlsToggleButtonPage();
 
-        inputControlsSteps.AcessarInputControlsToggleButton();
-        String toggleInicial = inputControlsToggleButtonPage.obterStatusSwitch();
-        Assert.assertEquals(toggleInicial, "0");
-
-        inputControlsToggleButtonPage.clicarBtnSwitch();
-        String toggleFinal = inputControlsToggleButtonPage.obterStatusSwitch();
-        Assert.assertEquals(toggleFinal, "1");
-    }
 
     @Test(priority = 1, description = "Teste para manipular campo Spinner")
     public void Test_ManipularCampoSpinner() {

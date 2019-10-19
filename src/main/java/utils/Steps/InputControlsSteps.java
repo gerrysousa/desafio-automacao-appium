@@ -80,4 +80,9 @@ public class InputControlsSteps {
         inputControlsPage.acessarInputControlsGesturesPage();
     }
 
+    public void AcessarInputControlsBotaoMaisInformacao() {
+        homePage.clicarBtnMenu();
+        menuPage.clicarInputControls();
+        inputControlsPage.acessarInputControlsBotaoMaisInformacaoPage();
+    }
 }

@@ -77,7 +77,6 @@ public class InputControlsPage extends BasePage {
             for (int i=0;i<5;i++)
             {
                 swipe(0.9,0.1);
-                //swipeElement(elementoGenerico, 0.9, 0.1);
             }
         }
 
@@ -114,4 +113,7 @@ public class InputControlsPage extends BasePage {
         clicar(pageGestures);
     }
 
+    public void acessarInputControlsBotaoMaisInformacaoPage() {
+        swipe(0.9,0.1);
+    }
 }
