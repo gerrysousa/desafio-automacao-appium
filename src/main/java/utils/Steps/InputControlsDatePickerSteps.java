@@ -110,34 +110,54 @@ public class InputControlsDatePickerSteps extends BasePage {
         int i = 0;
         int anoInt = Integer.parseInt(ano.trim());
 
-        while (!verificarSeExisteTextoNaPagina(ano)&&i<10) {
+        while (!verificarSeExisteTextoNaPagina(ano)&&i<40) {
             if((anoInt<2019))
             {
-                scrollElement(lblAno,0.5,0.8);
+                scrollElement(lblAno,0.5,0.6);
             }
             else
             {
-                scrollElement(lblAno,0.7,0.4);
+                scrollElement(lblAno,0.5,0.4);
             }
             i++;
         }
-        clicarPorTexto(ano);
+       //clicarPorTexto(ano);
     }
 
-
-
     public void escolherDiaIos(String dia) {
-        while (!verificarSeExisteTextoNaPagina(dia)&&i<10) {
-            if((do<2019))
-            {
-                scrollElement(lblAno,0.5,0.8);
-            }
-            else
-            {
-                scrollElement(lblAno,0.7,0.4);
-            }
+        int i=0;
+        while (!verificarSeExisteTextoNaPagina(dia)&&i<32) {
+            scrollElement(lblDia,0.5,0.6);
             i++;
         }
-        clicarPorTexto(ano);
+        //clicarPorTexto(dia);
+    }
+
+    public void escolherMesIos(String mes) {
+        inputControlsDatePickerPage = new InputControlsDatePickerPage();
+        int i = 0;
+        int mesInt = Integer.parseInt(mes.trim());
+
+        String mesString[];
+        mesString = new String[ 13 ];
+        mesString[ 0 ] = null;
+        mesString[ 1 ] = "January";
+        mesString[ 2 ] = "February";
+        mesString[ 3 ] = "March";
+        mesString[ 4 ] = "April";
+        mesString[ 5 ] = "May";
+        mesString[ 6 ] = "June";
+        mesString[ 7 ] = "July";
+        mesString[ 8 ] = "August";
+        mesString[ 9 ] = "September";
+        mesString[ 10 ] = "October";
+        mesString[ 11 ] = "November";
+        mesString[ 12 ] = "December";
+
+        while (!(verificarSeExisteTextoNaPagina(mesString[mesInt]))&&i<12) {
+            scrollElement(lblMes,0.5,0.6);
+            i++;
+        }
+        //clicarPorTexto(mes);
     }
 }
