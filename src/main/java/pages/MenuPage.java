@@ -43,6 +43,11 @@ public class MenuPage extends BasePage {
     @AndroidFindBy(xpath = "xxxxxxxx")
     private MobileElement btnHttp;
 
+    @iOSFindBy(accessibility= "Web")
+    @AndroidFindBy(xpath = "xxxxxxxx")
+    private MobileElement btnWebView;
+
+
     //Fim Mapeamento
     //Ações
     public void clicarBtnLoginPage()
@@ -83,5 +88,9 @@ public class MenuPage extends BasePage {
 
     public void clicarBtnHttp() {
         clicar(btnHttp);
+    }
+
+    public void clicarBtnWebViewPage() {
+        clicar(btnWebView);
     }
 }
