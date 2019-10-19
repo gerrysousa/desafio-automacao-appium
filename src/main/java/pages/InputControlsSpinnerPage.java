@@ -11,7 +11,7 @@ public class InputControlsSpinnerPage extends BasePage {
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/input_spinner")
     private MobileElement btnSelecao;
 
-    @iOSFindBy(xpath = "//android.widget.TextView[@text='Login Page']")
+    @iOSFindBy(xpath = "//XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeStaticText")
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/input_spinner_message")
     private MobileElement lblOpcaoSelecionada;
 

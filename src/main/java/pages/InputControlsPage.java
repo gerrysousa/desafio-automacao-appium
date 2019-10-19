@@ -80,18 +80,27 @@ public class InputControlsPage extends BasePage {
             }
         }
 
+
     }
 
     public void acessarInputControlsSpinnerPage() {
-        acessarInputControlsToggleButtonPage();
-        clicar(pageSpinner);
+        if (driver.getCapabilities().getCapability("platformName").toString().equals("Android")) {
+            acessarInputControlsToggleButtonPage();
+            clicar(pageSpinner);
+        }
+        else if (driver.getCapabilities().getCapability("platformName").toString().equals("iOS"))
+        {
+            for (int i=0;i<8;i++)
+            {
+                swipe(0.9,0.1);
+            }
+        }
     }
 
     public void acessarInputControlsPullToRefreshPage() {
         acessarInputControlsSpinnerPage();
         clicar(pagePullToRefresh);
     }
-
 
     public void acessarInputControlsTimePickerPage() {
         acessarInputControlsPullToRefreshPage();
@@ -104,8 +113,18 @@ public class InputControlsPage extends BasePage {
     }
 
     public void acessarInputControlsSubmitButtonPage() {
-        acessarInputControlsDatePickerPage();
-        clicar(pageSubmitButton);
+        if (driver.getCapabilities().getCapability("platformName").toString().equals("Android")) {
+            acessarInputControlsDatePickerPage();
+            clicar(pageSubmitButton);
+        }
+        else if (driver.getCapabilities().getCapability("platformName").toString().equals("iOS"))
+        {
+            for (int i=0;i<7;i++)
+            {
+                swipe(0.9,0.1);
+            }
+        }
+
     }
 
     public void acessarInputControlsGesturesPage() {

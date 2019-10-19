@@ -11,24 +11,20 @@ import utils.Steps.InputControlsSteps;
 public class InputControlsTests extends BaseTests {
 
     InputControlsSteps inputControlsSteps;
-    InputControlsDatePickerPage inputControlsDatePickerPage;
     InputControlsTextFieldPage inputControlsTextFieldPage;
-    InputControlsCheckboxPage inputControlsCheckboxPage;
-    InputControlsRadioButtonsPage inputControlsRadioButtonsPage;
     InputControlsToggleButtonPage inputControlsToggleButtonPage;
     InputControlsSpinnerPage inputControlsSpinnerPage;
-    InputControlsPushToRefreshPage inputControlsPushToRefreshPage;
     InputControlsSubmitButtonPage inputControlsSubmitButtonPage;
-    InputControlsGesturesPage inputControlsGesturesPage;
     InputControlsCampoInformacaoPage inputControlsCampoInformacaoPage;
+    InputControlsTextFieldSinglePage inputControlsTextFieldSinglePage;
 
-    @Test(priority = 1, description = "Teste para manipular campo Text Tield")
-    public void Test_ManipularCampoTextField() {
+    @Test(priority = 1, description = "Teste para manipular campo Text View")
+    public void Test_ManipularCampoTextView() {
         inputControlsSteps = new InputControlsSteps();
         inputControlsTextFieldPage = new  InputControlsTextFieldPage();
 
-        String texto = "Testando campo text field.";
-        String textoEsperado = "Testando campo text field.I am a textview";
+        String texto = "Testando campo text view.";
+        String textoEsperado = "Testando campo text view.I am a textview";
         inputControlsSteps.AcessarInputControlsTextField();
         inputControlsTextFieldPage.preencherCampoTexto(texto);
 
@@ -49,7 +45,6 @@ public class InputControlsTests extends BaseTests {
         Assert.assertEquals(toggleFinal, "1");
     }
 
-
     @Test(priority = 1, description = "Teste para manipular campo informacao")
     public void Test_ManipularCampoInformacao() {
        inputControlsSteps = new InputControlsSteps();
@@ -59,51 +54,6 @@ public class InputControlsTests extends BaseTests {
        inputControlsCampoInformacaoPage.clicarBtnMaisInformacao();
        String statusFinal = inputControlsCampoInformacaoPage.obterTextoBtnMaisInformacao();
        Assert.assertEquals(statusFinal, "true");
-    }
-
- /*
-   @Test(priority = 1, description = "Teste para manipular campo Radio buttons")
-   public void Test_ManipularCampoRadioButtons() {
-       inputControlsSteps = new InputControlsSteps();
-       inputControlsRadioButtonsPage = new  InputControlsRadioButtonsPage();
-
-       inputControlsSteps.AcessarInputControlsRadioButtons();
-       String radioMarcadoInicial = inputControlsRadioButtonsPage.obterRadioButtonMarcado();
-       Assert.assertEquals(radioMarcadoInicial, "Amazon");
-
-       inputControlsRadioButtonsPage.clicarRdbService();
-       String radioMarcadoFinal = inputControlsRadioButtonsPage.obterRadioButtonMarcado();
-       Assert.assertEquals(radioMarcadoFinal, "Services");
-   }
-
-
-
-    @Test(priority = 1, description = "Teste para manipular campo Spinner")
-    public void Test_ManipularCampoSpinner() {
-        inputControlsSteps = new InputControlsSteps();
-        inputControlsSpinnerPage = new  InputControlsSpinnerPage();
-
-        inputControlsSteps.AcessarInputControlsSpinner();
-        String opcaoInicialSelecionada = inputControlsSpinnerPage.obterOpcaoSelecionada();
-        Assert.assertEquals(opcaoInicialSelecionada, "Selected: option 1");
-
-        inputControlsSpinnerPage.selecionarOpcaoGenerica("option 3");
-        String opcaoFinalSelecionada = inputControlsSpinnerPage.obterOpcaoSelecionada();
-        Assert.assertEquals(opcaoFinalSelecionada, "Selected: option 3");
-    }
-
-    @Test(priority = 1, description = "Teste para manipular campo Pull to Resfresh")
-    public void Test_ManipularCampoPullToRefresh() {
-        inputControlsSteps = new InputControlsSteps();
-        inputControlsPushToRefreshPage = new  InputControlsPushToRefreshPage();
-
-        inputControlsSteps.AcessarInputControlsPullToRefresh();
-        String textoInicial = inputControlsPushToRefreshPage.obterMensagemExibida();
-        Assert.assertEquals(textoInicial, "Pull to refresh time");
-
-        inputControlsPushToRefreshPage.scrollDown();//.scroll(0.3, 0.8);
-        String textoFinal = inputControlsPushToRefreshPage.obterMensagemExibida();
-        Assert.assertTrue(textoFinal.contains(":"));
     }
 
     @Test(priority = 1, description = "Teste para manipular campo Botão Submit")
@@ -116,17 +66,32 @@ public class InputControlsTests extends BaseTests {
         inputControlsSubmitButtonPage.tirarScreenShotDaTela();
     }
 
-    @Test(priority = 1, description = "Teste para manipular campo Botão Submit")
-    public void Test_ManipularCampoGestures() {
+    @Test(priority = 1, description = "Teste para manipular campo Spinner")
+    public void Test_ManipularCampoSpinner() {
         inputControlsSteps = new InputControlsSteps();
-        inputControlsGesturesPage = new  InputControlsGesturesPage();
-        String resultado = "Single Tap Up";
+        inputControlsSpinnerPage = new  InputControlsSpinnerPage();
 
-        inputControlsSteps.AcessarInputControlsGesture();
-        inputControlsGesturesPage.clicarPadGestos();
-        inputControlsGesturesPage.tirarScreenShotDaTela();
-        String textoFinal = inputControlsGesturesPage.obterTextoLblDisplayGestosExecutados();
-        Assert.assertTrue(textoFinal.contains(resultado));
+        inputControlsSteps.AcessarInputControlsSpinner();
+        String opcaoInicialSelecionada = inputControlsSpinnerPage.obterOpcaoSelecionada();
+        Assert.assertEquals(opcaoInicialSelecionada, "Submit");
+
+        inputControlsSpinnerPage.selecionarOpcaoGenerica("Selection 1");
+        String opcaoFinalSelecionada = inputControlsSpinnerPage.obterOpcaoSelecionada();
+        Assert.assertEquals(opcaoFinalSelecionada, "Selection 1");
     }
-*/
+
+    @Test(priority = 1, description = "Teste para manipular campo Text Field unico")
+    public void Test_ManipularCampoTextField() {
+        inputControlsSteps = new InputControlsSteps();
+        inputControlsTextFieldSinglePage = new  InputControlsTextFieldSinglePage();
+
+        String texto = "Testando campo text view.";
+        inputControlsSteps.AcessarInputControlsTextField();
+        inputControlsTextFieldSinglePage.preencherCampoTexto(texto);
+
+        Assert.assertEquals(texto, inputControlsTextFieldPage.obterTextoDoElementoCampoTexto());
+    }
+
+
+
 }
