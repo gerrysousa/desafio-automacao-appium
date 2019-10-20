@@ -24,7 +24,6 @@ public class InputControlsDataDrivenTests extends BaseTests {
         return (testObjArray);
     }
 
-
     @Test(dataProvider="obterDadosParaTesteDatePicker")
     public void Test_ManipularCampoDatePicker(
             String dataEscolhida
@@ -37,7 +36,7 @@ public class InputControlsDataDrivenTests extends BaseTests {
         inputControlsDatePickerSteps.SelecionarNovaData(dataEscolhida);
 
         String dataFinal = inputControlsDatePickerPage.obterDataSelecionada();
-        Assert.assertEquals(dataFinal, dataEscolhida);//Expected:21/01/1990 --- Actual:1/21/1990
+        Assert.assertEquals(dataFinal, dataEscolhida);
     }
 
 

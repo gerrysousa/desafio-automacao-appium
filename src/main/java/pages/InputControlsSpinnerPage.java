@@ -7,7 +7,7 @@ import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class InputControlsSpinnerPage extends BasePage {
 
-    @iOSFindBy(xpath = "//android.widget.TextView[@text='Login Page']")
+    @iOSFindBy(xpath = "//XCUIElementTypePickerWheel")
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/input_spinner")
     private MobileElement btnSelecao;
 
@@ -26,8 +26,17 @@ public class InputControlsSpinnerPage extends BasePage {
     }
 
     public void selecionarOpcaoGenerica(String opcaoEscolhida) {
-        clicarBtnSelecao();
-        clicarPorTexto(opcaoEscolhida);
+        if (driver.getCapabilities().getCapability("platformName").toString().equals("Android")) {
+            // codigo para android
+            clicarBtnSelecao();
+            clicarPorTexto(opcaoEscolhida);
+        }
+        else if (driver.getCapabilities().getCapability("platformName").toString().equals("iOS"))
+        {
+            //codigo para iOS
+            scrollDirecao(170,240,170,270);
+        }
+
     }
 }
 

@@ -144,4 +144,11 @@ public class InputControlsPage extends BasePage {
     public void acessarInputControlsBotaoMaisInformacaoPage() {
         swipe(0.9,0.1);
     }
+
+    public void acessarInputControlsTextFieldSinglePage() {
+        for (int i=0;i<6;i++)
+        {
+            swipeRightIOS();
+        }
+    }
 }

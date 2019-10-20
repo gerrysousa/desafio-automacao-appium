@@ -85,4 +85,11 @@ public class InputControlsSteps {
         menuPage.clicarInputControls();
         inputControlsPage.acessarInputControlsBotaoMaisInformacaoPage();
     }
+
+    public void AcessarInputControlsTextFieldSingle()
+    {
+        homePage.clicarBtnMenu();
+        menuPage.clicarInputControls();
+        inputControlsPage.acessarInputControlsTextFieldSinglePage();
+    }
 }

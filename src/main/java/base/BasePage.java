@@ -309,8 +309,8 @@ public class BasePage {
     }
 
     public boolean verificarSeExisteTextoNaPagina(String texto) {
-        log.info("Verifica se existe o texto na pagina, com o valor: '"+texto+"'");
         boolean existe = getDriver().getPageSource().contains(texto);
+        log.info("Verifica se existe o texto na pagina, com o valor: '"+texto+"' Resultado: "+existe);
 
         return existe;
     }
@@ -367,6 +367,22 @@ public class BasePage {
 
     public void swipeRightIOS() {
         scrollDirecao(350,450,70,450);
+    }
+
+    protected void cliqueLongo(MobileElement element) {
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada+"'");
+        esperarElemento(element);
+        TouchAction actions = new TouchAction(getDriver());
+        actions.longPress(PointOption.point(element.getCenter().getX(),element.getCenter().getY()))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000))).perform();
+    }
+
+    public boolean verificarSeExisteTextoNoElemento (MobileElement element ,String texto) {
+        boolean existe = element.getText().contains(texto);
+        log.info("Verifica se existe o texto no Elemento, com o valor: '"+texto+"' Resultado: "+existe);
+
+        return existe;
     }
 }
 

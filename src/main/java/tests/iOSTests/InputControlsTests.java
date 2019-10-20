@@ -45,8 +45,8 @@ public class InputControlsTests extends BaseTests {
         Assert.assertEquals(toggleFinal, "1");
     }
 
-    @Test(priority = 1, description = "Teste para manipular campo informacao")
-    public void Test_ManipularCampoInformacao() {
+    @Test(priority = 1, description = "Teste para manipular campo mais informacao")
+    public void Test_ManipularCampoMaisInformacao() {
        inputControlsSteps = new InputControlsSteps();
        inputControlsCampoInformacaoPage = new InputControlsCampoInformacaoPage();
 
@@ -86,12 +86,10 @@ public class InputControlsTests extends BaseTests {
         inputControlsTextFieldSinglePage = new  InputControlsTextFieldSinglePage();
 
         String texto = "Testando campo text view.";
-        inputControlsSteps.AcessarInputControlsTextField();
+        inputControlsSteps.AcessarInputControlsTextFieldSingle();
         inputControlsTextFieldSinglePage.preencherCampoTexto(texto);
 
-        Assert.assertEquals(texto, inputControlsTextFieldPage.obterTextoDoElementoCampoTexto());
+        Assert.assertEquals(texto, inputControlsTextFieldSinglePage.obterTextoDoElementoCampoTexto());
     }
-
-
 
 }

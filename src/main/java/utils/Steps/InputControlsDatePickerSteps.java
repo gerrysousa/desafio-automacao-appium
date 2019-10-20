@@ -113,11 +113,11 @@ public class InputControlsDatePickerSteps extends BasePage {
         while (!verificarSeExisteTextoNaPagina(ano)&&i<40) {
             if((anoInt<2019))
             {
-                scrollElement(lblAno,0.5,0.6);
+                scrollDirecao(280,280,280,314);
             }
             else
             {
-                scrollElement(lblAno,0.5,0.4);
+                scrollDirecao(280,280,280,243);
             }
             i++;
         }
@@ -127,7 +127,7 @@ public class InputControlsDatePickerSteps extends BasePage {
     public void escolherDiaIos(String dia) {
         int i=0;
         while (!verificarSeExisteTextoNaPagina(dia)&&i<32) {
-            scrollElement(lblDia,0.5,0.6);
+            scrollDirecao(205,280,205,314);
             i++;
         }
         //clicarPorTexto(dia);
@@ -155,7 +155,7 @@ public class InputControlsDatePickerSteps extends BasePage {
         mesString[ 12 ] = "December";
 
         while (!(verificarSeExisteTextoNaPagina(mesString[mesInt]))&&i<12) {
-            scrollElement(lblMes,0.5,0.6);
+            scrollDirecao(90,280,90,314);
             i++;
         }
         //clicarPorTexto(mes);

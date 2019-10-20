@@ -6,7 +6,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class InputControlsSubmitButtonPage extends BasePage {
-    @iOSFindBy(id= "com.amazonaws.devicefarm.android.referenceapp:id/input_submit_button")
+    @iOSFindBy(accessibility= "Submit")
     @AndroidFindBy(id= "com.amazonaws.devicefarm.android.referenceapp:id/input_submit_button")
     private MobileElement btnSubmit;
 
@@ -16,7 +16,7 @@ public class InputControlsSubmitButtonPage extends BasePage {
 
 
     public void clicarBtnSubmit() {
-        clicar(btnSubmit);
+        cliqueLongo(btnSubmit);
     }
 
     public String obterMensagemExibida() {
