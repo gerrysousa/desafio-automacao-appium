@@ -110,7 +110,7 @@ public class InputControlsDatePickerSteps extends BasePage {
         int i = 0;
         int anoInt = Integer.parseInt(ano.trim());
 
-        while (!verificarSeExisteTextoNaPagina(ano)&&i<40) {
+        while (!verificarSeExisteTextoNoElemento(lblAno, ano)&&i<40) {
             if((anoInt<2019))
             {
                 scrollDirecao(280,280,280,314);
@@ -126,7 +126,7 @@ public class InputControlsDatePickerSteps extends BasePage {
 
     public void escolherDiaIos(String dia) {
         int i=0;
-        while (!verificarSeExisteTextoNaPagina(dia)&&i<32) {
+        while (!verificarSeExisteTextoNoElemento(lblDia, dia)&&i<32) {
             scrollDirecao(205,280,205,314);
             i++;
         }
@@ -154,7 +154,7 @@ public class InputControlsDatePickerSteps extends BasePage {
         mesString[ 11 ] = "November";
         mesString[ 12 ] = "December";
 
-        while (!(verificarSeExisteTextoNaPagina(mesString[mesInt]))&&i<12) {
+        while (!(verificarSeExisteTextoNoElemento(lblMes, mesString[mesInt]))&&i<12) {
             scrollDirecao(90,280,90,314);
             i++;
         }
