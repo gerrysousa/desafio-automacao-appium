@@ -11,7 +11,7 @@ public class InputControlsToggleButtonPage extends BasePage {
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/input_switch")
     private MobileElement btnSwitch;
 
-    @iOSFindBy(xpath = "//XCUIElementTypeTextView")
+    @iOSFindBy(xpath = "//XCUIElementTypeSwitch")
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/input_switch_display")
     private MobileElement lblStatusSwitch;
 

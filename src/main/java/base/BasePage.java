@@ -3,9 +3,11 @@ package base;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.touch.TapOptions;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.apache.commons.lang3.time.StopWatch;
@@ -91,10 +93,14 @@ public class BasePage {
         }
     }
     public void clicarAlternativo(By by) {
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada+"'");
         getDriver().findElement(by).click();
     }
 
     protected void clicarPorTexto(String texto) {
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada+"' Clicar no texto: "+texto);
         clicarAlternativo(By.xpath("//*[@text='"+texto+"']"));
     }
 
@@ -243,6 +249,8 @@ public class BasePage {
     }
 
     public void scroll(double inicio, double fim) {
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada);
         Dimension size =  getDriver().manage().window().getSize();
 
         int x = size.width/2;
@@ -257,6 +265,8 @@ public class BasePage {
     }
 
     public void swipe(double inicio, double fim) {
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada);
         Dimension size =  getDriver().manage().window().getSize();
 
         int y = size.height/2;
@@ -318,19 +328,6 @@ public class BasePage {
     }
 
     public void swipeElement(MobileElement elemento, double inicio, double fim) {
-//        int y= elemento.getLocation().y + (elemento.getSize().height / 2);
-//
-//        int start_x =(int) (elemento.getSize().width* inicio);
-//        int end_x =(int) (elemento.getSize().width* fim);
-//
-//        TouchAction actions = new TouchAction(getDriver());
-//        actions.press(PointOption.point(start_x, y))
-//                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
-//                .moveTo(PointOption.point(end_x, y)).release().perform();
-
-        Dimension teste;
-        teste = elemento.getSize();
-
         Dimension size = elemento.getSize();
         int y= elemento.getLocation().y + (elemento.getSize().height / 2);
 
@@ -343,29 +340,35 @@ public class BasePage {
                 .moveTo(PointOption.point(end_x, y)).release().perform();
 
     }
+
+    public void scrollDirecao(int xInicio,int yInicio,int xFinal,int yFinal) {
+        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
+        log.info("Ação: '" + metodoChamada+"'");
+        log.info("Ação scroll com as coordenadas: xInicio="+xInicio+", yInicio="+yInicio+", xFinal="+xFinal+", yFinal="+yFinal+".");
+        TouchAction actions = new TouchAction(getDriver());
+        actions.tap(PointOption.point(xInicio, yInicio))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
+                .moveTo(PointOption.point(xFinal, yFinal)).release()
+                .perform();
+
+    }
+
+    public void scrollDownIOS() {
+        scrollDirecao(200,700,200,100);
+    }
+
+    public void scrollUpIOS() {
+        scrollDirecao(200,100, 200,700);
+    }
+
+    public void swipeLeftIOS() {
+        scrollDirecao(70,450,350,450);
+    }
+
+    public void swipeRightIOS() {
+        scrollDirecao(350,450,70,450);
+    }
 }
-
-//    public void escrever(WebElement element, String texto) {
-//        AguardarLoading();
-//        String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-//        try {
-//            log.info("Ação: '" + metodoChamada + "' com o valor: '"+texto+"'");
-//            wait.until(ExpectedConditions.elementToBeClickable(element)).clear();
-//            element.sendKeys(Keys.CONTROL + "a");
-//            element.sendKeys(Keys.DELETE);
-//            element.sendKeys(texto);
-//        }
-//        catch (Exception e){
-//            log.error("Não conseguiu executar a ação: '"+ metodoChamada+"'");
-//            try {
-//                // log.fail("", MediaEntityBuilder.createScreenCaptureFromPath(ScreenShot.captureScreen()).build());
-//                log.error(e.toString());
-//            } catch (Exception e1) {
-//                e1.printStackTrace();
-//            }
-//        }
-//    }
-
 
 
 

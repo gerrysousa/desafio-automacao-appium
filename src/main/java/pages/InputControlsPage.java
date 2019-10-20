@@ -76,7 +76,7 @@ public class InputControlsPage extends BasePage {
         {
             for (int i=0;i<5;i++)
             {
-                swipe(0.9,0.1);
+                swipeRightIOS();
             }
         }
 
@@ -92,7 +92,7 @@ public class InputControlsPage extends BasePage {
         {
             for (int i=0;i<8;i++)
             {
-                swipe(0.9,0.1);
+                swipeRightIOS();
             }
         }
     }
@@ -116,7 +116,7 @@ public class InputControlsPage extends BasePage {
         {
             for (int i=0;i<2;i++)
             {
-                swipe(0.9,0.1);
+                swipeRightIOS();
             }
         }
 
@@ -131,7 +131,7 @@ public class InputControlsPage extends BasePage {
         {
             for (int i=0;i<7;i++)
             {
-                swipe(0.9,0.1);
+                swipeRightIOS();
             }
         }
     }

@@ -53,7 +53,7 @@ public class InputControlsTests extends BaseTests {
        inputControlsSteps.AcessarInputControlsBotaoMaisInformacao();
        inputControlsCampoInformacaoPage.clicarBtnMaisInformacao();
        String statusFinal = inputControlsCampoInformacaoPage.obterTextoBtnMaisInformacao();
-       Assert.assertEquals(statusFinal, "true");
+       Assert.assertEquals(statusFinal, "More Info");
     }
 
     @Test(priority = 1, description = "Teste para manipular campo Botão Submit")
