@@ -11,10 +11,10 @@ Esse projeto foi desenvolvido para o Desafio de Automação Appium (Android, iOS
 - [x]	4) Os casos de testes precisam ser executados em simulador e em um device real.
 
 **iOS** 
-- [ ] 5) Implementar 25 scripts de testes que manipulem um aplicativo móvel iOS com Page Objects. 
-- [ ] 6) Alguns scripts devem ler dados de uma planilha Excel para implementar Data-Driven. 
-- [ ] 7) Notem que 25 scripts podem cobrir mais de 25 casos de testes se usarmos Data-Driven. Em outras palavras, implementar 25 CTs usando data-driven não é a mesma coisa que implementar 25 scripts. 
-- [ ] 8) Os casos de testes precisam ser executados em simulador e em um device real. 
+- [x] 5) Implementar 25 scripts de testes que manipulem um aplicativo móvel iOS com Page Objects. 
+- [x] 6) Alguns scripts devem ler dados de uma planilha Excel para implementar Data-Driven. 
+- [x] 7) Notem que 25 scripts podem cobrir mais de 25 casos de testes se usarmos Data-Driven. Em outras palavras, implementar 25 CTs usando data-driven não é a mesma coisa que implementar 25 scripts. 
+- [x] 8) Os casos de testes precisam ser executados em simulador e em um device real. 
 
 **Device Farm/Relatório**
 - [x]	5) Gravar screenshots ou vídeos automaticamente dos casos de testes. 
