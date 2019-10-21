@@ -2,11 +2,11 @@
 <!--suite name="PositiveTestSuite" verbose="1" parallel="tests" thread-count="2"-->
 <suite name="Teste na DeviceFarm SauceLabs TestObject" verbose="1" thread-count="2">
 
-    <parameter name="environment" value="local"></parameter>
+    <parameter name="environment" value="deviceFarm"></parameter>
     <test name="Testes no login na DeviceFarm">
-        <parameter name="OS" value="IOS"></parameter>
+        <parameter name="OS" value="Android"></parameter>
         <classes>
-            <class name="tests.iOSTests.LoginTests"></class>
+            <class name="tests.androidTests.LoginTests"></class>
         </classes>
     </test>
 </suite>

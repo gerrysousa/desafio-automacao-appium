@@ -34,7 +34,6 @@ public class NativeComponentsPage extends BasePage {
     private MobileElement pageTableOfElements;
 
 
-
     //Açoes
     public void acessarImageCollectionPage() {
         clicar(pageImageCollection);
@@ -50,7 +49,6 @@ public class NativeComponentsPage extends BasePage {
         {
             //codigo para iOS
         }
-
         clicar(pageContentScrolling);
     }
 
@@ -66,7 +64,6 @@ public class NativeComponentsPage extends BasePage {
 
         clicar(pageVideoPlayer);
     }
-
 
     public void acessarCameraPage() {
         if (driver.getCapabilities().getCapability("platformName").toString().equals("Android")) {

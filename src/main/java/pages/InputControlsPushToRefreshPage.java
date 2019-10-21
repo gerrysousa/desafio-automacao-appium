@@ -11,7 +11,6 @@ public class InputControlsPushToRefreshPage extends BasePage {
     private MobileElement lblMensagem;
 
 
-
     public String obterMensagemExibida()
     {
         String mensagem = obterTexto(lblMensagem);

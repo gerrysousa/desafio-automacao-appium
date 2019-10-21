@@ -1,7 +1,6 @@
 package tests.androidTests;
 
 import base.BaseTests;
-import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LocalWebViewPage;
 import pages.MenuPage;
@@ -12,7 +11,7 @@ public class LocalWebViewTests extends BaseTests {
     private MenuPage menuPage;
     LocalWebViewPage localWebViewPage;
 
-    @Test(priority = 1, description = "teste de Local Web View")
+   // @Test(priority = 1, description = "teste de Local Web View")
     public void Test_LocalWebView() {
         homePage = new HomePage();
         menuPage = new MenuPage();

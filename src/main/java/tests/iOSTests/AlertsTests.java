@@ -20,7 +20,6 @@ public class AlertsTests extends BaseTests {
 
         homePage.clicarBtnMenu();
         menuPage.clicarBtnAlertsDialogsPage();
-
         alertsDialogsPage.clicarBtnAlert();
 
         String teste2 = alertsDialogsPage.obterMensagemDoAlerta();
@@ -37,8 +36,8 @@ public class AlertsTests extends BaseTests {
 
         homePage.clicarBtnMenu();
         menuPage.clicarBtnAlertsDialogsPage();
-
         alertsDialogsPage.clicarBtnToast();
+
         String teste2 = alertsDialogsPage.obterMensagemDoModal();
         Assert.assertEquals(teste2, textoAlerta);
     }

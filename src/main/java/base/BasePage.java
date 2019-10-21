@@ -3,11 +3,9 @@ package base;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.touch.TapOptions;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.apache.commons.lang3.time.StopWatch;
@@ -114,21 +112,21 @@ public class BasePage {
     }
     protected void escreverSemEsperarSerVisivel(MobileElement element, String text){
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada);
+        log.info("Ação: '" + metodoChamada+"'");
         element.sendKeys(text);
         //ExtentReportUtils.addTestInfo(3, "PARAMETER: " + text);
         log.info("Escrever o texto "+text+" no elemento: "+element);
     }
     protected void limparElemento(MobileElement element){
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada);
+        log.info("Ação: '" + metodoChamada+"'");
         log.info("Limpar o texto do elemento: "+element);
         esperarElemento(element);
         element.clear();
     }
     protected void limparDepoisEscrever(MobileElement element, String text){
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada);
+        log.info("Ação: '" + metodoChamada+"'");
         log.info("Limpar o texto do elemento "+element+" e escrever novo texto: "+text);
         esperarElemento(element);
         element.clear();
@@ -136,7 +134,7 @@ public class BasePage {
     }
     protected void limparDepoisEscreverAlternativo(MobileElement element, String text){
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada);
+        log.info("Ação: '" + metodoChamada+"'");
         log.info("Limpar o texto do elemento "+element+" e escrever novo texto: "+text);
         esperarElemento(element);
         element.sendKeys(Keys.CONTROL + "a");
@@ -145,7 +143,7 @@ public class BasePage {
     }
     protected String obterTexto(MobileElement element){
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada);
+        log.info("Ação: '" + metodoChamada+"'");
         log.info("Obter texto do elemento: "+element);
         esperarElemento(element);
         String text = element.getText();
@@ -155,7 +153,7 @@ public class BasePage {
     }
     protected String obterValor(MobileElement element){
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada);
+        log.info("Ação: '" + metodoChamada+"'");
         esperarElemento(element);
         String text = element.getAttribute("value");
         //ExtentReportUtils.addTestInfo(3, "RETURN: " + text);
@@ -164,7 +162,7 @@ public class BasePage {
     }
     protected String obterDescricaoDoElemento(MobileElement element){
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada);
+        log.info("Ação: '" + metodoChamada+"'");
         esperarElemento(element);
         String text = element.getAttribute("contentDescription");
         //ExtentReportUtils.addTestInfo(3, "RETURN: " + text);
@@ -174,7 +172,7 @@ public class BasePage {
 
     protected boolean retornaSeElementoEstaExibido(MobileElement element){
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada);
+        log.info("Ação: '" + metodoChamada+"'");
         esperarElemento(element);
         boolean result = element.isDisplayed();
         //ExtentReportUtils.addTestInfo(3, "RETURN: " + result);
@@ -183,7 +181,7 @@ public class BasePage {
     }
     protected boolean retornaSeElementoEstaHabilitado(MobileElement element){
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada);
+        log.info("Ação: '" + metodoChamada+"'");
         esperarElemento(element);
         boolean result = element.isEnabled();
         //ExtentReportUtils.addTestInfo(3, "RETURN: " + result);
@@ -192,7 +190,7 @@ public class BasePage {
     }
     protected boolean retornaSeElementoEstaSelecionado(MobileElement element){
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada);
+        log.info("Ação: '" + metodoChamada+"'");
         esperarElemento(element);
         boolean result = element.isSelected();
         //ExtentReportUtils.addTestInfo(3, "RETURN: " + result);
@@ -201,7 +199,7 @@ public class BasePage {
     }
     protected void scrollUsandoAcoesTouch_ByElements(MobileElement startElement, MobileElement endElement, int seconds) {
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada);
+        log.info("Ação: '" + metodoChamada+"'");
         TouchAction actions = new TouchAction(driver);
         actions.press(PointOption.point(startElement.getLocation().x,startElement.getLocation().y))
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(seconds)))
@@ -209,7 +207,7 @@ public class BasePage {
     }
     protected void scrollUsandoAcoesTouch(int startX,int startY, int endX, int endY, int seconds) {
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada);
+        log.info("Ação: '" + metodoChamada+"'");
         TouchAction actions = new TouchAction(driver);
         actions.press(PointOption.point(startX,startY))
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(seconds)))
@@ -217,7 +215,7 @@ public class BasePage {
     }
     protected void pressionarLongo(MobileElement element) {
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada);
+        log.info("Ação: '" + metodoChamada+"'");
         esperarElemento(element);
         TouchActions action = new TouchActions(driver);
         action.longPress(element);
@@ -225,7 +223,7 @@ public class BasePage {
     }
     protected void scrolling(String direction){
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada);
+        log.info("Ação: '" + metodoChamada+"'");
         JavascriptExecutor js = (JavascriptExecutor) driver;
         HashMap<String, String> scrollObject = new HashMap<String, String>();
         scrollObject.put("direction", direction);
@@ -233,7 +231,7 @@ public class BasePage {
     }
     protected void tap(MobileElement element){
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada);
+        log.info("Ação: '" + metodoChamada+"'");
         esperarElemento(element);
         TouchActions action = new TouchActions(driver);
         action.singleTap(element);
@@ -241,7 +239,7 @@ public class BasePage {
     }
     protected void doubleTap(MobileElement element){
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada);
+        log.info("Ação: '" + metodoChamada+"'");
         esperarElemento(element);
         TouchActions action = new TouchActions(driver);
         action.doubleTap(element);
@@ -250,7 +248,7 @@ public class BasePage {
 
     public void scroll(double inicio, double fim) {
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada);
+        log.info("Ação: '" + metodoChamada+"'");
         Dimension size =  getDriver().manage().window().getSize();
 
         int x = size.width/2;
@@ -266,7 +264,7 @@ public class BasePage {
 
     public void swipe(double inicio, double fim) {
         String metodoChamada = Thread.currentThread().getStackTrace()[2].getMethodName();
-        log.info("Ação: '" + metodoChamada);
+        log.info("Ação: '" + metodoChamada+"'");
         Dimension size =  getDriver().manage().window().getSize();
 
         int y = size.height/2;

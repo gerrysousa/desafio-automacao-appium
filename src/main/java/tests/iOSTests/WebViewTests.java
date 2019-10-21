@@ -3,8 +3,9 @@ package tests.iOSTests;
 import base.BaseTests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AlertsDialogsPage;
-import pages.*;
+import pages.HomePage;
+import pages.MenuPage;
+import pages.WebViewPage;
 
 
 public class WebViewTests extends BaseTests {
@@ -22,7 +23,6 @@ public class WebViewTests extends BaseTests {
 
         homePage.clicarBtnMenu();
         menuPage.clicarBtnWebViewPage();
-
         webViewPage.clicarBtnSignIn();
 
         String teste2 = webViewPage.obterMensagemDeBemVindo();

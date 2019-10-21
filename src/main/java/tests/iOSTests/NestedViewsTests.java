@@ -100,4 +100,3 @@ public class NestedViewsTests extends BaseTests {
     }
 
 }
-//This is the first view

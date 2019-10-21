@@ -20,7 +20,6 @@ public class HttpPage extends BasePage {
     private MobileElement lblAlerta;
 
 
-
     public void preencherCampoTexto(String texto)
     {
         escrever(txtCampoURL,texto);

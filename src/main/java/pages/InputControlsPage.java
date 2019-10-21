@@ -47,11 +47,9 @@ public class InputControlsPage extends BasePage {
     @AndroidFindBy(xpath= "//android.widget.TextView[@text='Gestures']")
     private MobileElement pageGestures;
 
-
-
-    //@iOSFindBy(xpath= "(//XCUIElementTypeOther)[1]")
     @iOSFindBy(xpath= "//XCUIElementTypePageIndicator")
     private MobileElement elementoGenerico;
+
 
     public void acessarInputControlsTextFieldPage() {
         clicar(pageTextField);
@@ -79,8 +77,6 @@ public class InputControlsPage extends BasePage {
                 swipeRightIOS();
             }
         }
-
-
     }
 
     public void acessarInputControlsSpinnerPage() {
@@ -119,7 +115,6 @@ public class InputControlsPage extends BasePage {
                 swipeRightIOS();
             }
         }
-
     }
 
     public void acessarInputControlsSubmitButtonPage() {

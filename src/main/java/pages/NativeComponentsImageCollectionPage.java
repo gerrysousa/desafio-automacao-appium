@@ -6,7 +6,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
 public class NativeComponentsImageCollectionPage extends BasePage {
-    //@iOSFindBy(xpath= "//XCUIElementTypeNavigationBar[@name='Image Gallery']")
+
     @iOSFindBy(xpath= "//XCUIElementTypeOther[@name='Image Gallery']")
     @AndroidFindBy(xpath= "//android.widget.TextView[@text='Image Collection']")
     private MobileElement lblTitulo;

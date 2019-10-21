@@ -23,7 +23,6 @@ public class LocalWebViewPage extends BasePage {
     private MobileElement lblHelloName;
 
 
-
     //Ações
     public void entrarContextoWeb() {
         Set<String> contextNames = getDriver().getContextHandles();

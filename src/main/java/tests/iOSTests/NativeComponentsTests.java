@@ -41,13 +41,14 @@ public class NativeComponentsTests extends BaseTests {
         nativeComponentsSteps = new NativeComponentsSteps();
         nativeComponentsContentScrollingPage = new NativeComponentsContentScrollingPage();
 
+        String textoTituloImagemColletion = "Scrolling View";
+
         nativeComponentsSteps.acessarContentScrollingPage();
 
-        String textoTituloImagemColletion = "Scrolling View";
-        String teste2 = nativeComponentsContentScrollingPage.obterTextoTitulo();
+        String aux = nativeComponentsContentScrollingPage.obterTextoTitulo();
         nativeComponentsContentScrollingPage.tirarScreenShotDaTela();
 
-        Assert.assertEquals(teste2, textoTituloImagemColletion);
+        Assert.assertEquals(aux, textoTituloImagemColletion);
     }
 
     @Test(priority = 1, description = "Teste para acessar Video Player")
@@ -55,12 +56,11 @@ public class NativeComponentsTests extends BaseTests {
         nativeComponentsSteps = new NativeComponentsSteps();
         nativeComponentsVideoPlayerPage = new NativeComponentsVideoPlayerPage();
 
-        nativeComponentsSteps.acessarVideoPlayerPage();
-
         String textoTituloImagemColletion = "Video Player";
+
+        nativeComponentsSteps.acessarVideoPlayerPage();
         //String teste2 = nativeComponentsVideoPlayerPage.obterTextoTitulo();
         nativeComponentsVideoPlayerPage.tirarScreenShotDaTela();
-
         //Assert.assertEquals(teste2, textoTituloImagemColletion);
     }
 
@@ -69,12 +69,11 @@ public class NativeComponentsTests extends BaseTests {
         nativeComponentsSteps = new NativeComponentsSteps();
         nativeComponentsCameraPage = new NativeComponentsCameraPage();
 
-        nativeComponentsSteps.acessarCameraPage();
-
         String textoTituloImagemColletion = "Camera";
+
+        nativeComponentsSteps.acessarCameraPage();
         //String teste2 = nativeComponentsCameraPage.obterTextoTitulo();
         nativeComponentsCameraPage.tirarScreenShotDaTela();
-
         //Assert.assertEquals(teste2, textoTituloImagemColletion);
     }
 
@@ -83,9 +82,9 @@ public class NativeComponentsTests extends BaseTests {
         nativeComponentsSteps = new NativeComponentsSteps();
         nativeComponentsTableOfElementsPage = new NativeComponentsTableOfElementsPage();
 
-        nativeComponentsSteps.acessarTableOfElementsPage();
-
         String textoEsperado = "1";
+
+        nativeComponentsSteps.acessarTableOfElementsPage();
         String teste2 = nativeComponentsTableOfElementsPage.obterTextoLinha1();
         nativeComponentsTableOfElementsPage.tirarScreenShotDaTela();
 
@@ -114,7 +113,6 @@ public class NativeComponentsTests extends BaseTests {
         nativeComponentsContentOutOfViewPage.tirarScreenShotDaTela();
         Assert.assertEquals(teste2, textoComponenteEscondido);
     }
-
     */
 
 }

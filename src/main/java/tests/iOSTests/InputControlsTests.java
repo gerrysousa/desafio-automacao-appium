@@ -36,13 +36,16 @@ public class InputControlsTests extends BaseTests {
         inputControlsSteps = new InputControlsSteps();
         inputControlsToggleButtonPage = new  InputControlsToggleButtonPage();
 
+        String toggleInativo = "0";
+        String toggleAtivo = "1";
+
         inputControlsSteps.AcessarInputControlsToggleButton();
         String toggleInicial = inputControlsToggleButtonPage.obterStatusSwitch();
-        Assert.assertEquals(toggleInicial, "0");
+        Assert.assertEquals(toggleInicial, toggleInativo);
 
         inputControlsToggleButtonPage.clicarBtnSwitch();
         String toggleFinal = inputControlsToggleButtonPage.obterStatusSwitch();
-        Assert.assertEquals(toggleFinal, "1");
+        Assert.assertEquals(toggleFinal, toggleAtivo);
     }
 
     @Test(priority = 1, description = "Teste para manipular campo mais informacao")
@@ -50,10 +53,12 @@ public class InputControlsTests extends BaseTests {
        inputControlsSteps = new InputControlsSteps();
        inputControlsCampoInformacaoPage = new InputControlsCampoInformacaoPage();
 
+       String textoEsperado = "More Info";
+
        inputControlsSteps.AcessarInputControlsBotaoMaisInformacao();
        inputControlsCampoInformacaoPage.clicarBtnMaisInformacao();
        String statusFinal = inputControlsCampoInformacaoPage.obterTextoBtnMaisInformacao();
-       Assert.assertEquals(statusFinal, "More Info");
+       Assert.assertEquals(statusFinal,textoEsperado);
     }
 
     @Test(priority = 1, description = "Teste para manipular campo Botão Submit")
@@ -71,13 +76,16 @@ public class InputControlsTests extends BaseTests {
         inputControlsSteps = new InputControlsSteps();
         inputControlsSpinnerPage = new  InputControlsSpinnerPage();
 
+        String opcaoNaoSelecionada = "Submit";
+        String opcaoSelecionada = "Selection 1";
+
         inputControlsSteps.AcessarInputControlsSpinner();
         String opcaoInicialSelecionada = inputControlsSpinnerPage.obterOpcaoSelecionada();
-        Assert.assertEquals(opcaoInicialSelecionada, "Submit");
+        Assert.assertEquals(opcaoInicialSelecionada, opcaoNaoSelecionada);
 
-        inputControlsSpinnerPage.selecionarOpcaoGenerica("Selection 1");
+        inputControlsSpinnerPage.selecionarOpcaoGenerica(opcaoSelecionada);
         String opcaoFinalSelecionada = inputControlsSpinnerPage.obterOpcaoSelecionada();
-        Assert.assertEquals(opcaoFinalSelecionada, "Selection 1");
+        Assert.assertEquals(opcaoFinalSelecionada, opcaoSelecionada);
     }
 
     @Test(priority = 1, description = "Teste para manipular campo Text Field unico")
@@ -89,7 +97,8 @@ public class InputControlsTests extends BaseTests {
         inputControlsSteps.AcessarInputControlsTextFieldSingle();
         inputControlsTextFieldSinglePage.preencherCampoTexto(texto);
 
-        Assert.assertEquals(texto, inputControlsTextFieldSinglePage.obterTextoDoElementoCampoTexto());
+        String textoEsperado =  inputControlsTextFieldSinglePage.obterTextoDoElementoCampoTexto();
+        Assert.assertEquals(texto,textoEsperado);
     }
 
 }

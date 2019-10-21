@@ -10,7 +10,6 @@ public class NativeComponentsContentOutOfViewPage extends BasePage {
     @AndroidFindBy(xpath= "//android.widget.TextView[@text='Content Out of View']")
     private MobileElement lblTitulo;
 
-
     @iOSFindBy(id= "com.amazonaws.devicefarm.android.referenceapp:id/hidden_text")
     @AndroidFindBy(id= "com.amazonaws.devicefarm.android.referenceapp:id/hidden_text")
     private MobileElement lblComponenteEscondido;
